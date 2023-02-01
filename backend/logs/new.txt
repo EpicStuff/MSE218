@@ -1,0 +1,6 @@
+20230124	12:37:53	d9c491c1-85cb-4635-bdde-a8ce8c10fb1c	test log emmitter
+20230124	12:38:16	0ca5a11b-c44e-4250-9a45-3c1cf3efc0c8	test log emmitter
+20230124	12:38:34	c1e67568-3e76-4f5b-af7d-126caab20153	test log emmitter, hello
+20230124	12:41:35	99865290-e445-4615-8166-ec8511e8ee6e	test log emmitter, hello
+20230124	15:00:07	eb36b3e5-44a7-4a57-9570-414b06a1b442	GET	undefined	/
+20230124	15:00:07	01ae3f6b-07d4-43d6-afbc-5b7b6c7d65a3	GET	undefined	/css/style.css
