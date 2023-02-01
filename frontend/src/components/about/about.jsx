@@ -1,6 +1,6 @@
 import React from 'react';
 import "../../css/about.css";
-
+// make a change
 
 export default class About extends React.Component { 
     constructor() {
