@@ -17,7 +17,12 @@ export default class Home extends React.Component {
     this.state = {
       black: true,
       hideRight: false,
-      width: null
+      width: null,
+      uniqueID: {
+        description: "",
+        courses: [],
+        related: []
+      }
     };
   }
 
@@ -58,14 +63,17 @@ export default class Home extends React.Component {
     //root.render(<Main />);
   }
 
+  changeUniqueID(item) {
+    this.setState({uniqueID: item});
+  }
+
   
   render () {  
     let btn_class = this.state.black ? "blackButton" : "whiteButton";  
     let right_div_class = this.state.hideRight ? "dont-show" : "initial-right-width";  
     let resizer = this.state.hideRight ? "dont-show" : "resizer"; 
 
-    let treeData; 
-    let description = ["definition as string", ["MAT121", "CSC243", "CSC236"], ["related1", "related2"]];
+   
     
     return (   
       <div>
@@ -81,7 +89,7 @@ export default class Home extends React.Component {
                   <FontAwesomeIcon icon={faArrowRightArrowLeft} />
                 </button>
                 <div id="treeContent">
-                  <TreeContent width={size.width} height={"700"}/>
+                  <TreeContent width={size.width} height={"700"} uniqueID={this.state.uniqueID} changeUniqueID={this.changeUniqueID.bind(this)}/>
                 </div>
               </div>}
             </SizeMe>
@@ -90,7 +98,9 @@ export default class Home extends React.Component {
           <div className={resizer} id="dragMe"></div>
           
           <div className={right_div_class} id="leftClass">
-            <div style={{width:"100%"}}><Description data={description}/></div>
+            <div style={{width:"100%"}}>
+              <Description uniqueID={this.state.uniqueID} changeUniqueID={this.changeUniqueID.bind(this)}/>
+            </div>
           </div>
 
         </div>

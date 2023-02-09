@@ -26,10 +26,10 @@ export default class Description extends React.Component {
     }
 
     render () {  
-        const data = this.props.data;
-        const description = data[0];
-        const courses = data[1];
-        const related = data[2];
+        const description = this.props.uniqueID.description;
+        const courses = this.props.uniqueID.courses;
+        const related = this.props.uniqueID.related;
+       
     
         return (
             <div>

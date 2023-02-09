@@ -10,9 +10,9 @@ const findbyUniqueID = async(x) => {
     }
 }
 
-const findDescription = async () => { 
+const findDescription = async (uniqueID) => { 
     // PARAM
-    const uniqueID = "function0";
+    //const uniqueID = "function0";
 
     const node = await findbyUniqueID(uniqueID);
 
@@ -20,8 +20,15 @@ const findDescription = async () => {
     const courses = node[0].courses.split(", ");
     const related = node[0].related.split(", ");
 
-    const to_return = [description, courses, related];
-    console.log(to_return);
+    const to_return = {
+        description: description,
+        courses: courses,
+        related: related
+    };
+    
+    return (
+        to_return
+    );
 }
 
 module.exports = findDescription;

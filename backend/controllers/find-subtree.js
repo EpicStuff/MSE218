@@ -109,15 +109,14 @@ async function trim(subtree, max_depth, max_width) {
 }
 
 // this is the main function that is exported
-async function generateSubtree() {
+async function generateSubtree(uniqueID) {
     try {
     // Parameters
-    const uniqueID = "function0";
-    const max_depth = 3;
-    const max_width = 3;
+    const max_depth = 4;
+    const max_width = 10;
 
     const root = await findbyUniqueID(uniqueID);
-    
+    console.log('current root', root);
     const subtree = {
         uniqueID: root[0].uniqueID, 
         name: root[0].name, 
@@ -125,16 +124,15 @@ async function generateSubtree() {
         colour: root[0].colour, 
         children: []
     }
-
+   
     subtree.children = await recursion(root[0].uniqueID, 0, max_depth);
 
     await trim(subtree, max_depth, max_width);
-    
+
     return (
         subtree
     );
-    //return subtree
-    // WANT TO RETURN SUBTREE OBJECT
+
 
     } catch(err){
         console.log('there is an error')

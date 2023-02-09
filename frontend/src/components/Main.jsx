@@ -6,6 +6,7 @@ import Header from "./header/header";
 import Ontology from "./ontology/ontology";
 import Home from "./home/home";
 import About from "./about/about";
+import Layout from "./Layout";
 
 import init from "./split.js";
 
@@ -23,25 +24,20 @@ export default class Main extends React.Component {
 
   render () {  
     return (  
-      <div>
-      <About />
-      <Home />
-  
-      </div>
-      /*{<Router>
+      
+      <Router>
 
-        <nav>
-          <Link to="/">Home hey</Link>
-          <Link to="/ontology">About</Link>
-        </nav>
 
         <Routes>
-          <Route exact path="/ontology" element={<Ontology />} />
-          <Route exact path="/" element={<Home />} />
-        </Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="ontology" element={<Ontology />} />
+        </Route>
+      </Routes>
         
    
-      </Router>}*/
+      </Router>
 
  
     );

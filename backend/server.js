@@ -8,26 +8,24 @@ const path = require('path');       // common core module, which lets us use the
 const logger = require('./middleware/logEvents'); // import the file from middleware
 const cors = require('cors');           // listed as a dependancy in the package.json
 const roots = require('./routes/root'); // import the routes root file, which stores the route
-const myfun = require("./controllers/find-subtree");
-let tree = {}
-const log = console.log
+const findTree = require("./controllers/find-subtree");
+const findNodeDescription = require("./controllers/find-description");
 
 
 
 const mongoose = require('mongoose');  // mongoose is a framework that lets us interact with mongoDB
 const connectDB = require('./config/dbConnect');  // function connectDB is defined in the dbConnect.js file, which just calls the mongoose.connect() function with our database_uri
 mongoose.set('strictQuery', true);     // adding this in cuz it was giving an error without it
-connectDB().then((res) => {
-    let resp = myfun();
-    log("THE TREE IS==========================");
+connectDB();
+/*
+.then((res) => {
+    //console.log("the tree?")
+    let resp = myfun("rational0");
     return resp
   }).then((res) => {
     tree = res;
   })                  
-  
-  
-  // call the function we imported above
-
+*/
 
 const PORT = process.env.PORT || 3500; // this is the port where our server exists
 
@@ -45,16 +43,37 @@ app.use(express.static(path.join(__dirname, './public'))); // used to serve stat
 const data = {name: "andrea", age: "12", gender: "F"};
 
 app.get('/person', (req, res) => {
-    res.json(data);
-});
-
-app.get('/tree', (req, res) => {
-    res.json(tree);
+    res.send("helloworld")
 });
 
 
-const findDescription = require("./controllers/find-description");
-//findDescription();
+// request parameter contains the uniqueID which we want to fetch the description data
+app.get('/node/:id', (req, res) => { 
+    console.log(req.params.id)
+    const input = req.params.id;
+    return Promise.resolve(1).then((res) => {
+        let resp = findNodeDescription(input);
+        return resp
+      }).then((node) => {
+        res.json(node);
+      }) 
+});
+
+
+// request parameter contains the uniqueID from the root node of the tree we want to create
+// response parameter sends a json object with the tree
+app.get('/tree/:id', (req, res) => {  
+    console.log(req.params.id)
+    const input = req.params.id;
+    return Promise.resolve(1).then((res) => {
+        let resp = findTree(input);
+        return resp
+      }).then((tree) => {
+        res.json(tree);
+      })    
+    
+});
+
 
 // routes
 app.use(roots);
@@ -62,7 +81,6 @@ app.use(roots);
 mongoose.connection.once('open', ()=>{
     console.log('connected to mongoose')
     app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-    
 })
 
 // PATH is the path on the server, i.e. the page we are working on

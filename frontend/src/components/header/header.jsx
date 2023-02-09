@@ -9,21 +9,13 @@ import logo from '../../images/mselogo.png'; // Tell webpack this JS file uses t
 export default class Header extends React.Component {
   constructor() {
     super();
-    this.state = {
-      search: false
-    };
   }
 
-  searchShift() {
-    this.setState({search: !this.state.search})
-    console.log("shifingt")
-  }
+
 
  
   
   render() {
-
-    let search_class_name = this.state.search ? "search-nav" : "dont-show"; 
 
     return (
       <div>

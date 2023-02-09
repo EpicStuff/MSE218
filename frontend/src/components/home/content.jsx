@@ -11,59 +11,94 @@ import restartAnimation from "../restartAnimation";
 
 
 const thedata = {
-    name: 'T',
-    uniqueID: 'root',
-    colour: 'red',
-    shape: 'set',
-    children: [
+  "uniqueID": "function0",
+  "name": "function",
+  "shape": "set",
+  "colour": "red",
+  "children": [
       {
-        name: 'testing here okay does this work',
-        uniqueID: 'child1',
-        colour: 'blue',
-        shape: 'box',
-        children: [
-          { name: 'A1' , uniqueID: 'a1', shape: 'aset', colour: 'black' },
-          { name: 'A2' , uniqueID: 'a2', shape: 'aset', colour: 'black' },
-          { name: 'A3' , uniqueID: 'a3', shape: 'box', colour: 'black', children: 
-            [ { name: 'D1', uniqueID: 'd1', colour: 'black'},
-              { name: 'D2', uniqueID: 'd2', colour: 'black'}] },
-          {
-            name: 'C',
-            uniqueID: 'c', 
-            colour: 'blue',
-            shape: 'aset',
-            children: [
+          "name": "polynomial",
+          "colour": "blue",
+          "shape": "set",
+          "uniqueID": "polynomial0",
+          "children": [
               {
-                name: 'C1',
-                uniqueID: 'c1', 
-                colour: 'blue'
+                  "name": "linear function",
+                  "colour": "green",
+                  "shape": "set",
+                  "uniqueID": "linfunction0",
+                  "children": []
+              }
+          ]
+      },
+      {
+          "name": "rational",
+          "colour": "blue",
+          "shape": "set",
+          "uniqueID": "rational0",
+          "children": [
+              {
+                  "name": "concept A1",
+                  "colour": "blue",
+                  "shape": "set",
+                  "uniqueID": "concepta1",
+                  "children": [
+                      {
+                          "name": "concept B1",
+                          "colour": "blue",
+                          "shape": "set",
+                          "uniqueID": "conceptb1",
+                          "children": [
+                              {
+                                  "name": "concept C1",
+                                  "colour": "blue",
+                                  "shape": "set",
+                                  "uniqueID": "conceptc1",
+                                  "children": []
+                              },
+                              {
+                                  "name": "concept C2",
+                                  "colour": "blue",
+                                  "shape": "set",
+                                  "uniqueID": "conceptc2",
+                                  "children": []
+                              }
+                          ]
+                      },
+                      {
+                          "name": "concept B2",
+                          "colour": "blue",
+                          "shape": "set",
+                          "uniqueID": "conceptb2",
+                          "children": []
+                      },
+                      {
+                          "name": "concept B3",
+                          "colour": "blue",
+                          "shape": "set",
+                          "uniqueID": "conceptb3",
+                          "children": []
+                      }
+                  ]
               },
               {
-                name: 'D',
-                uniqueID: 'D', 
-                colour: 'blue',
-                children: [
-                  { name: 'E1',  uniqueID: 'e1', colour: 'black'},
-                  { name: 'E2',  uniqueID: 'e2', colour: 'black'},
-                  { name: 'E3',  uniqueID: 'e3', colour: 'black'}
-                
-                ],
+                  "name": "concept A2",
+                  "colour": "blue",
+                  "shape": "set",
+                  "uniqueID": "concepta2",
+                  "children": []
               },
-            ],
-          },
-        ],
-      },
-      { name: 'Z' ,  uniqueID: 'z', colour: 'pink'},
-      {
-        name: 'B',
-        uniqueID: 'b',
-        colour: 'red',
-        children: [{ name: 'B1' ,  uniqueID: 'b1', colour: 'red'}, 
-                   { name: 'B2' ,  uniqueID: 'b2', colour: 'red'}, 
-                   { name: 'B3' ,  uniqueID: 'b3', colour: 'red'}],
-      },
-    ],
-  };
+              {
+                  "name": "concept A3",
+                  "colour": "blue",
+                  "shape": "set",
+                  "uniqueID": "concepta3",
+                  "children": []
+              }
+          ]
+      }
+  ]
+};
   
 
 
@@ -73,7 +108,7 @@ class TreeContent extends React.Component {
     this.state = {
         select: 0,
         hidden: null,
-        tree: {},
+        data: thedata,
     }
   }
 
@@ -90,43 +125,78 @@ class TreeContent extends React.Component {
 
   handleSingleClick(key, uniqueID) {
     this.setSelected(key)
+    this.fetchNodeByID(uniqueID)
     console.log(uniqueID);
-    // some function to handle getting the description data
+  }
+
+  fetchNodeByID(id) { // function will get run after the render method
+    const url = "http://localhost:3500/node/";
+    console.log("the uniqueID Passvdded in", id);
+    fetch(url.concat(id))
+        .then((res) => {
+            if (res.status !== 200) {
+                throw Error(res.status);
+            } 
+            return res.json();
+        })
+        .then((res) => {
+            console.log("after the fetch", res);
+            this.props.changeUniqueID(res);
+        })
   }
 
   handleDoubleClick(key, uniqueID) {
     console.log("Double Button Click Activated");
+    this.fetchByID(uniqueID);
     this.setState({hidden: key})
     console.log(this.state.hidden)
     setTimeout(function(){ restartAnimation(); }, 1000);  // 2 second delay
     setTimeout(this.setBack, 1000);
-    // some function to handle changing the tree data
+    
   }
 
-  getTree(key, uniqueID) {
-    fetch("http://localhost:3500/tree")
+  fetchByID(id) { // function will get run after the render method
+    const url = "http://localhost:3500/tree/";
+    fetch(url.concat(id))
         .then((res) => {
-        if (res.status !== 200) {
-            throw Error(res.status);
-        }
-        return res.json();
-
-        }).then((res) => {
-          //if (this.state.tree != res) {
-            console.log("Reached setting tree=")
-            console.log(res);
-            this.setState({tree: res});
-          //}
-          })
+            if (res.status !== 200) {
+                throw Error(res.status);
+            } 
+            return res.json();
+        })
+        .then((res) => {
+            console.log("after the fetch", res);
+            this.setState({data: res});  // this triggers the rerender to happen 
+        })
   }
-
+  /*
+  componentDidMount() { // function will get run after the render method
+    const id = "function0"
+    const url = "http://localhost:3500/tree/";
+    fetch(url.concat(id))
+        .then((res) => {
+            if (res.status !== 200) {
+                throw Error(res.status);
+            } 
+            return res.json();
+        })
+        .then((res) => {
+            console.log("after the fetch", res);
+            this.setState({data: res});  // this triggers the rerender to happen 
+        })
+  }
+*/
   render () {
+    console.log("render called")
+    console.log("rerenderchanfe something")
     const width = Number(this.props.width);
     const height = Number(this.props.height);
     const innerWidth = width - 60;
     const innerHeight = height - 150;
     const max_node_width = Math.floor(width / 120);
-    let data = {};
+    const newtree = this.state.data;
+    console.log(newtree);
+    //console.log(thedata);
          // console.log("this one:", this.state.tree);
     //console.log("test size:", max_node_width) 
     // create new constant called data which comes from the backend function
@@ -142,7 +212,7 @@ class TreeContent extends React.Component {
             <rect width={width} height={height} rx={0} fill="#FFFAFA" fillOpacity={0} />
             <Group top={20} left={20}>
             <Tree
-                root={hierarchy(this.state.tree, (d) =>  d.children)}
+                root={hierarchy(newtree, (d) =>  d.children)}
                 size={[innerWidth, innerHeight]}
                 separation={(a, b) =>  1 }
             >
@@ -171,7 +241,7 @@ class TreeContent extends React.Component {
 
                     const width = 110;
                     const height = 40;
-                    const [t, setT] = useState("");
+                    //const [t, setT] = useState("");
 
                     let top = node.y;
                     let left = node.x;
@@ -217,13 +287,11 @@ class TreeContent extends React.Component {
                                     border: borderDash,
                                     }}
                                 onClick = {() => {this.handleSingleClick(key, node.data.uniqueID)}}
-                                onDoubleClick = {() => {this.getTree(key, node.data.uniqueID)}}
+                                onDoubleClick = {() => {this.handleDoubleClick(key, node.data.uniqueID)}}
                                 > 
-                               
                                 {node.data.name}
-                                {'hey'}
-                                {node.data.colour}
-                                {node.depth} 
+                          
+                                
                             </div>
                         </div>
                         </foreignObject>       
