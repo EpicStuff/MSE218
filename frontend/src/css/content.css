@@ -15,6 +15,15 @@
   }
 
 
+
+
+
+.slide:hover,
+.slide:focus {
+	transform: translateY(0.07em);
+}
+
+
 .fade-in-one {
 	opacity: 1;
 	animation-name: fadeInOpacity;

@@ -17,15 +17,18 @@ const Layout = () => {
             <Link to="/" className="nav-label">Home</Link>
             <Link to="/about" className="nav-label">About</Link>
             <Link to="/ontology" className="nav-label">Ontology</Link>
+            <Link to="/courses" className="nav-label">MSE Courses</Link>
           </div>
-          <div className="search">
-            <SearchForm />
-          </div>
+          
         </div>
       </nav>
       <Outlet />
     </div>
   )
 };
+
+/**<div className="search">
+            <SearchForm />
+          </div> */
 
 export default Layout;

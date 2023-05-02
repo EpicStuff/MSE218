@@ -9,6 +9,14 @@ import { useState } from "react";
 import "../../css/content.css";
 import restartAnimation from "../restartAnimation";
 
+const colour_dict = {
+    "blue": "#00bbf9",
+    "green": "#99d98c",
+    "purple": "#c77dff",
+    "red": "#ef233c",
+    "orange": "#f79d65",
+    "pink": "#ff7096"
+}
 
 const thedata = {
   "uniqueID": "function0",
@@ -18,13 +26,13 @@ const thedata = {
   "children": [
       {
           "name": "polynomial",
-          "colour": "blue",
+          "colour": "#c77dff",
           "shape": "set",
           "uniqueID": "polynomial0",
           "children": [
               {
                   "name": "linear function",
-                  "colour": "green",
+                  "colour": "#99d98c",
                   "shape": "set",
                   "uniqueID": "linfunction0",
                   "children": []
@@ -33,33 +41,33 @@ const thedata = {
       },
       {
           "name": "rational",
-          "colour": "blue",
+          "colour": "#00bbf9",
           "shape": "set",
           "uniqueID": "rational0",
           "children": [
               {
                   "name": "concept A1",
-                  "colour": "blue",
+                  "colour": "#cfbaf0",
                   "shape": "set",
                   "uniqueID": "concepta1",
                   "children": [
                       {
-                          "name": "concept B1",
-                          "colour": "blue",
+                          "name": "Writing a longer Concept to see",
+                          "colour": "#ffbf69",
                           "shape": "set",
                           "uniqueID": "conceptb1",
                           "children": [
                               {
                                   "name": "concept C1",
-                                  "colour": "blue",
-                                  "shape": "set",
+                                  "colour": "#f79d65",
+                                  "shape": "aset",
                                   "uniqueID": "conceptc1",
                                   "children": []
                               },
                               {
                                   "name": "concept C2",
-                                  "colour": "blue",
-                                  "shape": "set",
+                                  "colour": "#f79d65",
+                                  "shape": "else",
                                   "uniqueID": "conceptc2",
                                   "children": []
                               }
@@ -67,14 +75,14 @@ const thedata = {
                       },
                       {
                           "name": "concept B2",
-                          "colour": "blue",
+                          "colour": "#ef233c",
                           "shape": "set",
                           "uniqueID": "conceptb2",
                           "children": []
                       },
                       {
                           "name": "concept B3",
-                          "colour": "blue",
+                          "colour": "#ff7096",
                           "shape": "set",
                           "uniqueID": "conceptb3",
                           "children": []
@@ -83,14 +91,14 @@ const thedata = {
               },
               {
                   "name": "concept A2",
-                  "colour": "blue",
-                  "shape": "set",
+                  "colour": colour_dict.blue,
+                  "shape": "aset",
                   "uniqueID": "concepta2",
                   "children": []
               },
               {
                   "name": "concept A3",
-                  "colour": "blue",
+                  "colour": colour_dict.red,
                   "shape": "set",
                   "uniqueID": "concepta3",
                   "children": []
@@ -226,7 +234,7 @@ class TreeContent extends React.Component {
                         data={link}
                         key={i}
                         stroke={link.target.data.colour}
-                        strokeWidth="1"
+                        strokeWidth="1.5"
                         fill="none"
                         display={this.state.hidden == null ? "block" : "none"}
                     />
@@ -252,14 +260,14 @@ class TreeContent extends React.Component {
                     let borderRad;
                     let borderDash;
                     if (shape == "set") {
-                        borderRad = "50px";
+                        borderRad = "25px";
                         borderDash = "none";
                     } else if (shape == "aset") {
-                        borderRad = "50px";
-                        borderDash = "2px dashed pink";
+                        borderRad = "25px";
+                        borderDash = "2px dashed #e0aaff";
                     } else {
-                        borderRad = "3px";
-                        borderDash = "none";
+                        borderRad = "25px";
+                        borderDash = "2px dashed #333333";
                     } 
 
                     let depth = Number(node.depth)
@@ -272,16 +280,22 @@ class TreeContent extends React.Component {
                         fadeClass = "fade-in-three";
                     } 
 
-                    var selected = (key == this.state.select) ? "pink": "#292929";
+                    var background_colour = (key != this.state.select) ? "#292929": "#fefae0";
+                    var font_colour = (key != this.state.select) ? "white": "black";
                     var isHidden = (key == this.state.hidden || this.state.hidden == null) ? "block": "none";
                     
                   
                     return (
                         <foreignObject key={key} x={left-width/2} y={top-height/2} width="110" height="100">
                         <div className={fadeClass} >
-                            <div className="nodes"
+                            <div className="nodes slide"
                                 style={{
-                                    backgroundColor: selected,
+                                    backgroundColor: background_colour,
+                                    boxShadow: "rgba(0, 0, 0, 0.23) 0px 6px 6px",
+                                    color: font_colour,
+                                    fontFamily: 'Mukta',
+                                    lineHeight: "15px",
+                                    fontSize: "15px",
                                     display: isHidden,
                                     borderRadius: borderRad,
                                     border: borderDash,

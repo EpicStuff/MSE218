@@ -5,7 +5,7 @@
     display: table;
     width: 100%;
     height: 44px;
-    background: #222222;
+    background: #141414;
 }
 /*
 .nav-bar .nav-links {
@@ -35,7 +35,7 @@
 
 /****** MSE Knowledge Engine Logo ******/
 .pink {
-    color: #a2d2ff;
+    color: #898BBD;
 }
 .logo{
     position: relative;
@@ -47,13 +47,13 @@
     font-size: 1em;
     line-height: 1em;
     margin: 5px;
-    color: white;
+    color: #FEF8EC;
     font-family: 'Josefin Sans', sans-serif;
 }
 
 /****** Links ******/
 .nav-label {
-    color: #f2f2f2;
+    color: #FEF8EC;
     padding: 0 20px 0 20px;
     text-decoration: none;
     line-height: 44px;
@@ -61,7 +61,7 @@
 }
 
 .nav-label:hover {
-    color: #a2d2ff;
+    color: #6F71AE;
 }
 
 

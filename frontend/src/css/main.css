@@ -28,7 +28,8 @@ h1 {
 
   background-color: #e5e5f7;
   opacity: 0.8;
-  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
+  /*background-image: radial-gradient(#4a4e69 0.5px, #8D99AE 0.5px);*/
   background-size: 10px 10px;
 }
 
@@ -51,7 +52,7 @@ h1 {
 .initial-right-width {
   flex: 1;
   display: flex;
-  background-color: #EEE5E5;
+  background-color: #0A0A0A;
   height: 100%
 }
 
@@ -60,7 +61,7 @@ h1 {
 }
 
 .resizer {
-  background-color: #EEE5E5;
+  background-color: #000000;
   cursor: ew-resize;
   height: 100%;
   width: 4px;
@@ -73,19 +74,19 @@ h1 {
 button{
   width: 25px;
   height: 25px;
-  margin: 10px;
-  margin-top: 50px;
+  margin: 5px;
+  margin-top: 40px;
   margin-bottom: 0px;
   float: right;
   border: none;
   border-radius: 5px;
 }
 .blackButton{
-  background-color: black;
+  background-color: transparent;
   color: white;
 }
 
 .whiteButton{
-  background-color: white;
+  background-color: transparent;
   color: black;
 }

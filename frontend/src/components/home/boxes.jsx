@@ -11,7 +11,7 @@ class GreyBox extends React.Component {
     return (
       <div className="grey-box">
         <h1>{this.props.title}</h1>
-        <hr></hr>
+    
         <p>{this.props.content}</p>
       </div>
     );

@@ -7,6 +7,7 @@ import Ontology from "./ontology/ontology";
 import Home from "./home/home";
 import About from "./about/about";
 import Layout from "./Layout";
+import Courses from "./courses/courses";
 
 import init from "./split.js";
 
@@ -33,6 +34,7 @@ export default class Main extends React.Component {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="ontology" element={<Ontology />} />
+          <Route path="coueses" element={<Courses />} />
         </Route>
       </Routes>
         
