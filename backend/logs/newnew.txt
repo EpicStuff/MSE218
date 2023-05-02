@@ -25105,3 +25105,14 @@
 20230502	17:13:49	79981198-f16a-4992-af34-949ed9f79384	GET	 http://localhost:8080	 /node/rational0
 20230502	17:13:49	d82496ac-0baf-4623-a413-7e4751e14ddb	GET	 http://localhost:8080	 /tree/rational0
 20230502	17:16:59	97dffc16-ae57-413b-8bd9-c126d8561582	GET	 http://localhost:8080	 /node/concepta1
+20230502	18:48:21	cdd96dc4-4c95-4f00-93a0-cd5ccefdc7c7	GET	 http://localhost:8080	 /node/polynomial0
+20230502	18:48:28	1e1922f1-7658-49af-9058-819c351c889c	GET	 http://localhost:8080	 /node/rational0
+20230502	18:48:30	42d3e4a3-7922-42e1-93b2-c7a1ab611dfb	GET	 http://localhost:8080	 /node/linfunction0
+20230502	18:48:37	a35aa9e3-da0e-4c59-ab10-e4cb65725a7f	GET	 http://localhost:8080	 /node/function0
+20230502	18:52:07	7bd01824-1c10-411e-9ff2-96cead494e77	GET	 http://localhost:8080	 /node/rational0
+20230502	18:52:09	e0902256-fe8e-4a94-a858-69ee447d2074	GET	 http://localhost:8080	 /node/rational0
+20230502	18:52:10	f49bd000-7253-4277-8978-e9a889061835	GET	 http://localhost:8080	 /node/rational0
+20230502	18:52:10	4b8289a7-593d-443f-9831-4db8ae8d4068	GET	 http://localhost:8080	 /tree/rational0
+20230502	18:52:23	137836d1-52c8-4781-8de4-ebddd55fa2d4	GET	 http://localhost:8080	 /node/polynomial0
+20230502	18:52:23	16030b0e-3c33-4652-9e0f-4a2671112f30	GET	 http://localhost:8080	 /tree/polynomial0
+20230502	18:52:23	d0bfd673-0ab8-42c4-972d-2e6004991a46	GET	 http://localhost:8080	 /node/polynomial0
