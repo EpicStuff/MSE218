@@ -26,7 +26,7 @@ const thedata = {
   "children": [
       {
           "name": "polynomial",
-          "colour": "#c77dff",
+          "colour": "#fae588",
           "shape": "set",
           "uniqueID": "polynomial0",
           "children": [

@@ -31,10 +31,10 @@ export default class Main extends React.Component {
 
         <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Ontology />} /> 
           <Route path="about" element={<About />} />
           <Route path="ontology" element={<Ontology />} />
-          <Route path="coueses" element={<Courses />} />
+          <Route path="courses" element={<Courses />} />
         </Route>
       </Routes>
         

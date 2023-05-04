@@ -1,20 +1,103 @@
 .background {
     width: 100%;
     height: 100%;
+    background-color: #e5e5f7;
+    opacity: 0.8;
+    background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
+    background-size: 10px 10px;
 }
 
+.intro {
+    position: relative;
+    width: 87%;
+    padding: 50px 300px 50px 300px;
+    background-color: #8D99AE;
+    color: black;
+    font-family: 'Josefin Sans';
+    font-size: 25px;
+}
+.content-side {
+    position: relative;
+}
+
+.relation-section {
+    background-color: #292929;
+    padding: 40px;
+    color: white;
+    width: 50%;
+    margin: 0px;
+    font-family: 'Josefin Sans';
+    position: absolute;
+    border: 3px solid #0b090a;
+}
+
+.subset {
+    top: 80px;
+    left: 90px;
+    width: 45%;
+    height: 450px;
+}
+
+.constitution {
+    top: 800px;
+    left: 90px;
+    width: 500px;
+    height: 500px;
+}
+
+.derived {
+    top: 1600px;
+    left: 90px;
+    width: 500px;
+    height: 300px;
+}
+
+.subtopic {
+    top: 2400px;
+    left: 90px;
+    width: 500px;
+    height: 500px;
+}
+
+.characterize {
+    top: 3000px;
+    left: 90px;
+    width: 500px;
+    height: 500px;
+}
+
+.theorem {
+    top: 3600px;
+    left: 90px;
+    width: 500px;
+    height: 500px; 
+}
+
+.example-side {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 40%;
+    height: 3000px;
+}
+
+.positioner1 {
+    margin-top: 270px;
+}
+
+/*
 .content-side {
     background-color: #f5f5f5;
+    color: #292929;
     float: left;
     width: 60%;
     height: 100%;
 }
 
-
 .example-side {
     background-color: #e5e5f7;
     opacity: 0.8;
-    background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
     background-size: 10px 10px;
     float: left;
     width: 40%;
@@ -22,17 +105,35 @@
 }
 
 .content-side .intro {
-    padding: 20px;
-    color: red;
+    padding-left: 40px;
+    padding-right: 100px;
+    padding-top: 30px;
+    padding-bottom: 10px;
 }
 
-
 .content-side .relation-section {
-    padding: 20px;
-    color: green;
+    padding-left: 40px;
+    padding-right: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .content-side .relation-section h1 {
-    color: pink;
+    color: #292929;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+
+.positioner1 {
+    margin-top: 270px;
+}
+
+.positioner2 {
+    margin-top: 100px;
+}
+
+.positioner3 {
+    margin-top: 20px;
+}
+
+*/

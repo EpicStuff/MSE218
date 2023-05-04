@@ -38,7 +38,7 @@ class CreateTree extends React.Component {
                             data={link}
                             key={i}
                             stroke={link.target.data.colour}
-                            strokeWidth="1"
+                            strokeWidth="1.5"
                             fill="none"
                             display={"block"}
                         />
@@ -46,25 +46,25 @@ class CreateTree extends React.Component {
                    
                     {tree.descendants().map((node, key) => {
 
-                        const width = 90;
+                       
+                        const width = 110;
                         const height = 40;
-                        const [t, setT] = useState("");
 
                         let top = node.y;
                         let left = node.x;
-            
+
                         let shape = node.data.shape;
                         let borderRad;
                         let borderDash;
                         if (shape == "set") {
-                            borderRad = "50px";
+                            borderRad = "25px";
                             borderDash = "none";
                         } else if (shape == "aset") {
-                            borderRad = "50px";
-                            borderDash = "2px dashed pink";
+                            borderRad = "25px";
+                            borderDash = "2px dashed #e0aaff";
                         } else {
-                            borderRad = "3px";
-                            borderDash = "none";
+                            borderRad = "25px";
+                            borderDash = "2px dashed #333333";
                         } 
 
                         let depth = Number(node.depth)
@@ -78,13 +78,18 @@ class CreateTree extends React.Component {
                         } 
 
                         return (
-                            <foreignObject key={key} x={left-width/2} y={top-height/2} width="90" height="40">
+                            <foreignObject key={key} x={left-width/2} y={top-height/2} width="110" height="100">
                                 <div className={fadeClass} >
                                     <div className="nodes" 
                                     style={{
-                                        backgroundColor: "#333333",
+                                        backgroundColor: "#292929",
+                                        boxShadow: "rgba(0, 0, 0, 0.23) 0px 6px 6px",
+                                        color: "#FFFFFF",
+                                        fontFamily: 'Mukta',
+                                        lineHeight: "15px",
+                                        fontSize: "15px",
                                         borderRadius: borderRad,
-                                        border: borderDash
+                                        border: borderDash,
                                         }}> 
                                         {node.data.name}
                                     </div>

@@ -66,7 +66,7 @@ function remove_node(curr_node, uniqueID, parent) {
         }
     }
 }
-
+//
 // takes in the nested tree object, and the uniqueID of the node to be deleted
 // finds the parent of that object through the database (might want to change this later??)
 // calls the function remove_node with that node and its parent
