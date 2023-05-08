@@ -1,139 +1,54 @@
-.background {
-    width: 100%;
-    height: 100%;
-    background-color: #e5e5f7;
-    opacity: 0.8;
-    background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
-    background-size: 10px 10px;
+
+/* this is the container that holds the labels subset, constitution, etc... */
+.labels {
+    margin-top: 20px;
+    margin-left: 20px;
+    position: relative;
+    width: 200px;
+    height: 40px;
 }
 
-.intro {
-    position: relative;
-    width: 87%;
-    padding: 50px 300px 50px 300px;
-    background-color: #8D99AE;
-    color: black;
+/* The font style for each p, plus padding in between them */
+.labels p {
+    padding: 20px 0 10px 0;
     font-family: 'Josefin Sans';
-    font-size: 25px;
 }
+
+
+/* holds the two sides so they can go blocked beside eachother */
+.relation-description-holder {
+    display: table;
+    clear: both;
+}
+
+/* this is a holder for the relation description boxes */
 .content-side {
     position: relative;
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 200px;
+    float: left;
 }
 
+/* this is the relation description boxes */
 .relation-section {
     background-color: #292929;
     padding: 40px;
     color: white;
-    width: 50%;
     margin: 0px;
     font-family: 'Josefin Sans';
-    position: absolute;
+    position: relative;
     border: 3px solid #0b090a;
+    margin-bottom: 50px;
 }
 
-.subset {
-    top: 80px;
-    left: 90px;
-    width: 45%;
-    height: 450px;
-}
-
-.constitution {
-    top: 800px;
-    left: 90px;
-    width: 500px;
-    height: 500px;
-}
-
-.derived {
-    top: 1600px;
-    left: 90px;
-    width: 500px;
-    height: 300px;
-}
-
-.subtopic {
-    top: 2400px;
-    left: 90px;
-    width: 500px;
-    height: 500px;
-}
-
-.characterize {
-    top: 3000px;
-    left: 90px;
-    width: 500px;
-    height: 500px;
-}
-
-.theorem {
-    top: 3600px;
-    left: 90px;
-    width: 500px;
-    height: 500px; 
-}
-
+/* holder for the example trees */
 .example-side {
-    position: absolute;
-    top: 10px;
-    right: 0px;
-    width: 40%;
-    height: 3000px;
-}
-
-.positioner1 {
-    margin-top: 270px;
-}
-
-/*
-.content-side {
-    background-color: #f5f5f5;
-    color: #292929;
-    float: left;
-    width: 60%;
+    width: 35%;
     height: 100%;
-}
-
-.example-side {
-    background-color: #e5e5f7;
-    opacity: 0.8;
-    background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
-    background-size: 10px 10px;
-    float: left;
-    width: 40%;
-    height: 100%;
-}
-
-.content-side .intro {
-    padding-left: 40px;
-    padding-right: 100px;
-    padding-top: 30px;
-    padding-bottom: 10px;
-}
-
-.content-side .relation-section {
-    padding-left: 40px;
-    padding-right: 100px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.content-side .relation-section h1 {
-    color: #292929;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 20px;
 }
 
 
-.positioner1 {
-    margin-top: 270px;
-}
-
-.positioner2 {
-    margin-top: 100px;
-}
-
-.positioner3 {
-    margin-top: 20px;
-}
-
-*/

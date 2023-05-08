@@ -27,7 +27,7 @@ const conceptSchema = new Schema({
         default: "box",
     },
     courses: {
-        type: String,
+        type: Array,
         default: [],
     },    
     related: {

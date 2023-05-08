@@ -4,6 +4,7 @@ import restartAnimation from "../restartAnimation";
 import TreeContent from "./content";
 import Description from "./descriptions";
 import init from "../split.js";
+import { thedata } from "./initial-tree-data";
 
 import "../../css/main.css";
 import { SizeMe } from 'react-sizeme';
@@ -76,7 +77,7 @@ export default class Home extends React.Component {
    
     
     return (   
-      <div>
+      <div className="main-container">
 
         <div className="container" id="body">  
           
@@ -89,7 +90,12 @@ export default class Home extends React.Component {
                   <FontAwesomeIcon icon={faArrowRightArrowLeft} />
                 </button>
                 <div id="treeContent">
-                  <TreeContent width={size.width} height={"700"} uniqueID={this.state.uniqueID} changeUniqueID={this.changeUniqueID.bind(this)}/>
+                  <TreeContent 
+                      data={thedata} 
+                      width={size.width} 
+                      height={"700"} 
+                      uniqueID={this.state.uniqueID} 
+                      changeUniqueID={this.changeUniqueID.bind(this)}/>
                 </div>
               </div>}
             </SizeMe>
@@ -99,11 +105,16 @@ export default class Home extends React.Component {
           
           <div className={right_div_class} id="leftClass">
             <div style={{width:"100%"}}>
-              <Description uniqueID={this.state.uniqueID} changeUniqueID={this.changeUniqueID.bind(this)}/>
+              <Description 
+                  uniqueID={this.state.uniqueID} 
+                  changeUniqueID={this.changeUniqueID.bind(this)}/>
             </div>
           </div>
 
         </div>
+        <div className="footer">
+        </div>
+
       </div>
     );
   }

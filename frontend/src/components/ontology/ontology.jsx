@@ -1,5 +1,6 @@
 import React from 'react';
 import "../../css/ontology.css";
+import "../../css/style.css";
 import CreateTree from './tree.jsx';
 import { SizeMe } from 'react-sizeme';
 import {subset, constitution, theorem, subtopic, characterize, derive} from './data';
@@ -11,21 +12,50 @@ export default class Ontology extends React.Component {
         super();
     }
 
+    scrollFunction1(id) {
+        console.log("here")
+        let e = document.getElementById(id);
+        console.log(e)
+        e.scrollIntoView({
+          block: 'center',
+          behavior: 'smooth',
+          inline: 'start'
+        })
+    }
+
     render () {  
         
         return (
             <div>
             <div className='background'>
+                <div className='black-box'></div>
+                <div className='vertical-bar'>
+                    <div className="labels">
+                        <p onClick = {() => {this.scrollFunction1('subset')}}><span style={{color: "#f79d65"}}>Subset</span></p>
+                        <p onClick = {() => {this.scrollFunction1('constitution')}}><span style={{color: "#ef233c"}}>Constitution</span></p>
+                        <p onClick = {() => {this.scrollFunction1('subtopic')}}><span style={{color: "#99d98c"}}>Subtopic</span></p>
+                        <p onClick = {() => {this.scrollFunction1('characterize')}}><span style={{color: "#c77dff"}}>Characterize</span></p>
+                        <p onClick = {() => {this.scrollFunction1('theorem')}}><span style={{color: "#00bbf9"}}>Theorem</span></p>
+                        <p onClick = {() => {this.scrollFunction1('derive')}}><span style={{color: "#ff7096"}}>Derive</span></p>
+                    </div>
+                    
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+       
                 <div className='intro'>
-                    <h1>Relation Descriptions</h1>
-                    <br></br>
-                    <p>The MSEKE curriculum knowledge map organizes concepts into a hierarchical tree. To incorporate an additional layer of useful information, each hierarchical relation is categorized by the type of relation, which is labelled by different colours in the map. There are six relations found in the concept map, and they are described on this page. 
-                    </p>
+                <h1>Relation Descriptions</h1>
+                <br></br>
+                <p>The MSEKE curriculum knowledge map organizes concepts into a hierarchical tree. To incorporate an additional layer of useful information, each hierarchical relation is categorized by the type of relation, which is labelled by different colours in the map. There are six relations found in the concept map, and they are described on this page. 
+                </p>
                 </div>
 
+               
 
+                <div className='relation-description-holder'>
                 <div className='content-side'>  
-                    <div className='relation-section subset' id='subset'>
+                    <div className='relation-section' id='subset'>
                         <h1 style={{color: "#f79d65"}}>Subset</h1>
                         <br></br>
                         <p>subset(X, Y) := Y is a subset of X</p>
@@ -51,7 +81,7 @@ export default class Ontology extends React.Component {
                         With the concepts modeled in this way, the subset relation is defined naturally. The subset relation describes a broader than, narrower than relation where the parent class is a set, and the child class is either an element, or a subset of the set. 
                         </p>
                     </div>
-                    <div className='relation-section constitution' id='constitution'>
+                    <div className='relation-section' id='constitution'>
                         <h1 style={{color: "#ef233c"}}>Constitution</h1>
                         <p>constitution(X, Y) := X constitutes of Y</p>
                         <br></br>
@@ -76,13 +106,13 @@ export default class Ontology extends React.Component {
                         </ul>
                         </p>
                     </div>
-                    <div className='relation-section subtopic' id='subtopic'>
+                    <div className='relation-section' id='subtopic'>
                         <h1 style={{color: "#99d98c"}}>Subtopic</h1>
                         <p>subtopic(X, Y) :=  Y is a subtopic of X</p>
                         <br></br>
                         <p>The format of information grouped into chapters in textbooks, or modules in courses has been a historically widely used organization of information. The relation seen is where a topic branches into various sub topics, which are generally related, but more specific than the overarching topic. The subtopic relation is most often used in the high level with broad topics. For instance the topic of calculus would have subtopics such as functions, limits, integrals, differential equations etc. Since it is not formally axiomatized, this relation carries less information than others, however it is useful for grouping information in meaningful ways.</p>
                     </div>
-                    <div className='relation-section characterize' id='characterize'>
+                    <div className='relation-section' id='characterize'>
                         <h1 style={{color: "#c77dff"}}>Characterize</h1>
                         <p>characterized(X, Y) := Y is an attribute, or family of attributes of X</p>
                         <br></br>
@@ -110,13 +140,13 @@ export default class Ontology extends React.Component {
                         The bolded concepts are considered the attribute sets
                         </p>
                     </div>
-                    <div className='relation-section theorem' id='theorem'>
+                    <div className='relation-section' id='theorem'>
                         <h1 style={{color: "#00bbf9"}}>Theorem</h1>
                         <p>Theorem(X, Y) := Y is a theorem, rule, or law that is related to X</p>
                         <br></br>
                         <p>This relation is also modeled after the format of a textbook, where scientific or mathematical theorems are highlighted as important points in the textbook. Since this is a prominent aspect of course content, it deserved its own relation. The relation is not formally axiomatized, similarly to the subtopic relation, the concepts are loosely defined as related. The only restriction is that the child class must be a theorem or some family of theorems (like the laws of thermodynamics).</p>
                     </div>
-                    <div className='relation-section derived' id='derived'>
+                    <div className='relation-section' id='derive'>
                         <h1 style={{color: "#ff7096"}}>Derived</h1>
                         <p>derive(X, Y) := Y assists in the definition, construction, or discovery of X</p>
                         <br></br>
@@ -154,6 +184,7 @@ export default class Ontology extends React.Component {
                 }
                 </SizeMe>
                 </div>
+                </div>
             </div>
             </div>
         );
@@ -161,10 +192,7 @@ export default class Ontology extends React.Component {
 }
 
 /*
-<div className='intro'>
-                <h1>Relation Descriptions</h1>
-                <br></br>
-                <p>The MSEKE curriculum knowledge map organizes concepts into a hierarchical tree. To incorporate an additional layer of useful information, each hierarchical relation is categorized by the type of relation, which is labelled by different colours in the map. There are six relations found in the concept map, and they are described on this page. 
-                </p>
-            </div>
+
  */
+
+            

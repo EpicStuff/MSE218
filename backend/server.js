@@ -8,8 +8,11 @@ const path = require('path');       // common core module, which lets us use the
 const logger = require('./middleware/logEvents'); // import the file from middleware
 const cors = require('cors');           // listed as a dependancy in the package.json
 const roots = require('./routes/root'); // import the routes root file, which stores the route
-const findTree = require("./controllers/find-subtree");
-const findNodeDescription = require("./controllers/find-description");
+
+// CONTROLLER IMPORTS
+const findTree = require("./controllers/find-subtree");                   // generates the subtree
+const findNodeDescription = require("./controllers/find-description");    // finds the description elements given a uniqueID
+const findConceptsbyCourses = require("./controllers/find-overlap");    // finds the description elements given a uniqueID
 
 
 
@@ -46,6 +49,9 @@ app.get('/person', (req, res) => {
     res.send("helloworld")
 });
 
+// ****************************************************************************************
+// ********************* HERE IS WHERE THE REQUESTS / RESPONSES GO ************************
+// ****************************************************************************************
 
 // request parameter contains the uniqueID which we want to fetch the description data
 app.get('/node/:id', (req, res) => { 
@@ -71,8 +77,23 @@ app.get('/tree/:id', (req, res) => {
       }).then((tree) => {
         res.json(tree);
       })    
-    
 });
+
+// sends an array of course code ID's which are strings. Returns an array of concepts which 
+// include all course codes in the array
+app.get('/concept/:courseIDs', (req, res) => { 
+    console.log(req.params.courseIDs)
+    const input = req.params.courseIDs;
+    return Promise.resolve(1).then((res) => {
+        let resp = findConceptsbyCourses(input);
+        return resp
+      }).then((node) => {
+        res.json(node);
+      }) 
+});
+
+// ****************************************************************************************
+// ****************************************************************************************
 
 
 // routes

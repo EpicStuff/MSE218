@@ -24,7 +24,7 @@ class MiniGreyBox extends React.Component {
 
   render() {
     return (
-      <div className="mini-grey-box">
+      <div className="mini-grey-box" style={{backgroundColor: this.props.colour}} onClick={this.props.onClick}>
         <p>{this.props.content}</p>       
       </div>
     );

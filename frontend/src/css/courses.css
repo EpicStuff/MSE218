@@ -1,32 +1,113 @@
-.background {
-    background-color: #e5e5f7;
-    opacity: 0.8;
+/* Change to no scroll bar */
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+/* shifts content down */
+.main-holder {
+    margin-top: 44px;
+}
+
+
+.column {
+    height: 100vh;
+    float: left;
+    overflow: scroll;
+}
+
+.left { 
+    background: pink;
+    width: 10%; 
+}
+
+
+.right { 
+    background: #efe; 
+    width: 90%;
+}
+
+.content-left {
+    height: 100vh;
+    margin: 10px 2px 10px 10px;   /* TOP RIGHT BOTTOM LEFT*/
+}
+
+.content-right {
+    height: 10000px;
     background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
     background-size: 10px 10px;
-    width: 100%;
-    height: 3000px;
-    position: relative;
+    height: 100vh;
 }
 
-
-.text-box {
-    background-color: #292929;
-    padding: 40px;
-    color: white;
+.holder-for-concepts {
+    margin: auto;
     width: 50%;
-    margin: 0px;
-    font-family: 'Josefin Sans';
-
-    position: absolute;
-    top: 80px;
-    left: 90px;
-    width: 500px;
+    justify-content: center;
+    border-radius: 300px;
+    background-color: aqua;
     height: 500px;
-    border: 3px solid #73AD21;
 }
 
-.text-box p {
+.intro2 {
+    background-color: #fefae0;
+    color: black;
+    font-size: 25px;
+    border-bottom: 5px solid pink;
+}
+
+.intro2 p {
+    font-family: 'Inconsolata';
+    padding: 20px 100px 20px 40px;   /* TOP RIGHT BOTTOM LEFT*/
+}
+
+.intro2 h1 {
+    font-family: 'Inconsolata';
+    font-size: 70px;
+    padding: 40px 40px 0px 40px; 
+}
+
+
+
+
+/*
+
+.position-courses{
+    position: relative;
+    margin-left: 10%;
+}
+
+
+.holder {
+    float: right;
+}
+
+
+.content p {
     font-size: 18px;
     line-height: 20px;
+    color: white;
+    font-family: 'Josefin Sans';
 }
+
+
+
+.vertical-bar-long {
+    position: relative;
+    width: 10%;
+    height: 100vh;
+    background-color: #0b090a;
+}
+
+.black-box-long {
+    width: 10%;
+    height: 44px;
+    background-color: #0b090a;
+    opacity: 0.8;
+    position: relative;
+    top: 0;
+    left: 0; 
+}
+*/
+
+
+/* The white background. The margin is pushed to accomodate the left sidebar */
 

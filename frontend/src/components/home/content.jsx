@@ -4,110 +4,12 @@ import { Group } from "@visx/group";
 import { hierarchy, Tree } from "@visx/hierarchy";
 
 import { useState } from "react";
-
+import { thedata } from "./initial-tree-data";
 
 import "../../css/content.css";
 import restartAnimation from "../restartAnimation";
 
-const colour_dict = {
-    "blue": "#00bbf9",
-    "green": "#99d98c",
-    "purple": "#c77dff",
-    "red": "#ef233c",
-    "orange": "#f79d65",
-    "pink": "#ff7096"
-}
 
-const thedata = {
-  "uniqueID": "function0",
-  "name": "function",
-  "shape": "set",
-  "colour": "red",
-  "children": [
-      {
-          "name": "polynomial",
-          "colour": "#fae588",
-          "shape": "set",
-          "uniqueID": "polynomial0",
-          "children": [
-              {
-                  "name": "linear function",
-                  "colour": "#99d98c",
-                  "shape": "set",
-                  "uniqueID": "linfunction0",
-                  "children": []
-              }
-          ]
-      },
-      {
-          "name": "rational",
-          "colour": "#00bbf9",
-          "shape": "set",
-          "uniqueID": "rational0",
-          "children": [
-              {
-                  "name": "concept A1",
-                  "colour": "#cfbaf0",
-                  "shape": "set",
-                  "uniqueID": "concepta1",
-                  "children": [
-                      {
-                          "name": "Writing a longer Concept to see",
-                          "colour": "#ffbf69",
-                          "shape": "set",
-                          "uniqueID": "conceptb1",
-                          "children": [
-                              {
-                                  "name": "concept C1",
-                                  "colour": "#f79d65",
-                                  "shape": "aset",
-                                  "uniqueID": "conceptc1",
-                                  "children": []
-                              },
-                              {
-                                  "name": "concept C2",
-                                  "colour": "#f79d65",
-                                  "shape": "else",
-                                  "uniqueID": "conceptc2",
-                                  "children": []
-                              }
-                          ]
-                      },
-                      {
-                          "name": "concept B2",
-                          "colour": "#ef233c",
-                          "shape": "set",
-                          "uniqueID": "conceptb2",
-                          "children": []
-                      },
-                      {
-                          "name": "concept B3",
-                          "colour": "#ff7096",
-                          "shape": "set",
-                          "uniqueID": "conceptb3",
-                          "children": []
-                      }
-                  ]
-              },
-              {
-                  "name": "concept A2",
-                  "colour": colour_dict.blue,
-                  "shape": "aset",
-                  "uniqueID": "concepta2",
-                  "children": []
-              },
-              {
-                  "name": "concept A3",
-                  "colour": colour_dict.red,
-                  "shape": "set",
-                  "uniqueID": "concepta3",
-                  "children": []
-              }
-          ]
-      }
-  ]
-};
-  
 
 
 class TreeContent extends React.Component {
@@ -116,10 +18,12 @@ class TreeContent extends React.Component {
     this.state = {
         select: 0,
         hidden: null,
-        data: thedata,
+        data: this.props.data,
     }
   }
 
+  // the selected state always points to the current node which is selected
+  // this indicates what colour it should display
   setSelected(key) {
     this.setState({select: key})
     console.log({root})
@@ -137,7 +41,13 @@ class TreeContent extends React.Component {
     console.log(uniqueID);
   }
 
-  fetchNodeByID(id) { // function will get run after the render method
+  // This function will get run after the render method.
+  // requests the backend to provide the description for the uniqueID given in the form of an object;
+  // the object includes the (1) definition string, (2) related courses, (2) related concepts. 
+  // The changeUniqueID function comes through as a props with the < TreeContent > constructor.
+  // When this function is called here, it calls the function in the home.jsx file, which is the < Home > class
+  // which allows it to update the description in the < Description > class. 
+  fetchNodeByID(id) { 
     const url = "http://localhost:3500/node/";
     console.log("the uniqueID Passvdded in", id);
     fetch(url.concat(id))
@@ -148,22 +58,28 @@ class TreeContent extends React.Component {
             return res.json();
         })
         .then((res) => {
-            console.log("after the fetch", res);
             this.props.changeUniqueID(res);
         })
   }
 
+  // when the user double clicks a node on the tree
+  // they pass through th uniqueID and the key of the node 
+  // uniqueID is used to query the database and find a selected node
+  // the key is the unique number which is assigned to the node by the tree construction
   handleDoubleClick(key, uniqueID) {
     console.log("Double Button Click Activated");
     this.fetchByID(uniqueID);
     this.setState({hidden: key})
-    console.log(this.state.hidden)
     setTimeout(function(){ restartAnimation(); }, 1000);  // 2 second delay
     setTimeout(this.setBack, 1000);
     
   }
 
-  fetchByID(id) { // function will get run after the render method
+  // function will get run after the render method
+  // requests the backend to provide a tree in the intended data structure using the uniqueID given
+  // the state data is updated with the new tree
+  // this is called on the handle double click method
+  fetchByID(id) { 
     const url = "http://localhost:3500/tree/";
     fetch(url.concat(id))
         .then((res) => {
@@ -173,7 +89,6 @@ class TreeContent extends React.Component {
             return res.json();
         })
         .then((res) => {
-            console.log("after the fetch", res);
             this.setState({data: res});  // this triggers the rerender to happen 
         })
   }
