@@ -17,9 +17,8 @@ const findDescription = async (uniqueID) => {
     const node = await findbyUniqueID(uniqueID);
 
     const description = node[0].description;
-    //const courses = node[0].courses.split(", ");
     const courses = node[0].courses;
-    const related = node[0].related.split(", ");
+    const related = node[0].related;
  
     const to_return = {
         description: description,

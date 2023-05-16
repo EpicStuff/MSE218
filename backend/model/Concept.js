@@ -31,7 +31,7 @@ const conceptSchema = new Schema({
         default: [],
     },    
     related: {
-        type: String,
+        type: Array,
         default: [],
     },
 })

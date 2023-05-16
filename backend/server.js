@@ -13,11 +13,12 @@ const roots = require('./routes/root'); // import the routes root file, which st
 const findTree = require("./controllers/find-subtree");                   // generates the subtree
 const findNodeDescription = require("./controllers/find-description");    // finds the description elements given a uniqueID
 const findConceptsbyCourses = require("./controllers/find-overlap");    // finds the description elements given a uniqueID
-
+const findAncestors = require("./controllers/find-ancestors")
 
 
 const mongoose = require('mongoose');  // mongoose is a framework that lets us interact with mongoDB
 const connectDB = require('./config/dbConnect');  // function connectDB is defined in the dbConnect.js file, which just calls the mongoose.connect() function with our database_uri
+
 mongoose.set('strictQuery', true);     // adding this in cuz it was giving an error without it
 connectDB();
 /*
@@ -90,6 +91,19 @@ app.get('/concept/:courseIDs', (req, res) => {
       }).then((node) => {
         res.json(node);
       }) 
+});
+
+// sends an array of course code ID's which are strings. Returns an array of concepts which 
+// include all course codes in the array
+app.get('/grandparent/:id', (req, res) => { 
+  const input = req.params.id;
+  return Promise.resolve(1).then((res) => {
+      let resp = findAncestors(input);
+      console.log(resp)
+      return resp
+    }).then((node) => {
+      res.json(node);
+    }) 
 });
 
 // ****************************************************************************************

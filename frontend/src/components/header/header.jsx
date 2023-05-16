@@ -1,44 +1,34 @@
-
-import React from "react";
+import { Outlet, Link } from "react-router-dom";
+import React from 'react';
 import SearchForm from "./searchForm";
-import "../../css/header.css";
+import "./../../css/header";
+import logo from './../../images/mselogo.png'; // Tell webpack this JS file uses this image
 
-// IDK I THINK THIS FILE IS IRRELEVENET
-
-import logo from '../../images/mselogo.png'; // Tell webpack this JS file uses this image
-
-export default class Header extends React.Component {
-  constructor() {
-    super();
-  }
-
-  render() {
-
-    return (
-      <div>
+const Header = () => {
+  return (
+    <div>
+      <nav>
         <div className="nav-bar">
-          
           <div className="logo-and-words">
             <img src={logo} className="logo" width="30px" alt="Logo" />
-            <div className="logo-words">Knowlvseedge<br></br>Engine</div>
+            <div className="logo-words">Knowledge<br></br><span className="pink">Engine</span></div>
           </div>
-
           <div className="nav-links">
-            <a className="nav-label" href="/index">Home</a>
-            <a className="nav-label" href="/about">About</a>
-            <a className="nav-label" href="/ontology">Ontology</a>
-            <a className="nav-label" href="/ontology">MSE Courses</a>
-          </div>
-
-          <div className="search">
-            <SearchForm />
+            <Link to="/" className="nav-label">Home</Link>
+            <Link to="/about" className="nav-label">About</Link>
+            <Link to="/ontology" className="nav-label">Ontology</Link>
+            <Link to="/courses" className="nav-label">MSE Courses</Link>
           </div>
           
         </div>
-      </div>
-     
-    
- 
-    );
-  }     
-}
+      </nav>
+      <Outlet />
+    </div>
+  )
+};
+
+/**<div className="search">
+            <SearchForm />
+          </div> */
+
+export default Header;

@@ -66,12 +66,12 @@ const characterize = {
     parent: [], 
     children: [
         {name: 'Eye Colour', colour: colours.purple, shape: 'aset', parent: 'A', children: [
-            {name: 'Blue', colour: colours.purple, shape: 'set', parent: 'A', children: []},
-            {name: 'Green', colour: colours.purple, shape: 'set', parent: 'A', children: []},
-            {name: 'Brown', colour: colours.purple, shape: 'set', parent: 'A', children: []},
-            {name: 'Hazel', colour: colours.purple, shape: 'set', parent: 'A', children: []}
+            {name: 'Blue', colour: colours.orange, shape: 'set', parent: 'A', children: []},
+            {name: 'Green', colour: colours.orange, shape: 'set', parent: 'A', children: []},
+            {name: 'Brown', colour: colours.orange, shape: 'set', parent: 'A', children: []},
+            {name: 'Hazel', colour: colours.orange, shape: 'set', parent: 'A', children: []}
         ]}, 
-        {name: 'Height', colour: colours.purple, shape: 'set', parent: 'A', children: []}
+        {name: 'Height', colour: colours.purple, shape: 'aset', parent: 'A', children: []}
     ]
 };
 
@@ -81,7 +81,7 @@ const subtopic = {
     shape: 'set', 
     parent: [], 
     children: [
-        {name: 'Integration and Differentiation', colour: colours.green, shape: 'set', parent: 'A', children: [
+       
             {name: 'Integration', colour: colours.green, shape: 'set', parent: 'A', children: [
                 {name: 'Reimann Summs', colour: colours.green, shape: 'set', parent: 'A', children: []},
                 {name: 'Integrals', colour: colours.green, shape: 'set', parent: 'A', children: []},
@@ -89,9 +89,9 @@ const subtopic = {
                 {name: 'Techniques of Integration', colour: colours.green, shape: 'set', parent: 'A', children: []}
             ]},
             {name: 'Differentiation', colour: colours.green, shape: 'set', parent: 'A', children: []}
-        ]}, 
+        ], 
         
-    ]
+    
 };
 
 export {subset, constitution, theorem, subtopic, characterize, derive};

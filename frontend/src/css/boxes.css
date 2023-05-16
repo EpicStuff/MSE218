@@ -8,9 +8,9 @@
     border-radius: 10px;
     text-align: left;
     margin: 15px;
-  }
+}
   
-  .mini-grey-box {
+.wrap-small-text-box {
     background: #888181;
     padding: 7px; 
     color: #FFFFFF;
@@ -22,8 +22,26 @@
     margin-right: 10px;
     margin-top: 5px;
     margin-bottom: 5px;
-  }
+}
 
-  .holder {
+.fixed-small-text-box {
+  background: #888181;
+  padding: 7px; 
+  color: #FFFFFF;
+  font-family: Arial;
+  border-radius: 7px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.change-on-hover:hover {
+  background: black;
+}
+
+.holder {
     display: block;
-  }
+}

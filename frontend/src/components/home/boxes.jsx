@@ -2,7 +2,7 @@ import React from "react";
 import "../../css/boxes";
 import "../../css/main";
 
-class GreyBox extends React.Component {
+class DefinitionBox extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -17,19 +17,34 @@ class GreyBox extends React.Component {
   }
 }
 
-class MiniGreyBox extends React.Component {
+class WrapSmallTextBox extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div className="mini-grey-box" style={{backgroundColor: this.props.colour}} onClick={this.props.onClick}>
+      <div className="wrap-small-text-box change-on-hover" style={{backgroundColor: this.props.colour}} onClick={this.props.onClick}>
         <p>{this.props.content}</p>       
       </div>
     );
   }
-
 }
 
-export {GreyBox, MiniGreyBox};
+
+
+class FixedSmallTextBox extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="fixed-small-text-box change-on-hover" style={{backgroundColor: this.props.colour, width: this.props.width}} onClick={this.props.onClick}>
+        <p>{this.props.content}</p>       
+      </div>
+    );
+  }
+}
+
+export {DefinitionBox, FixedSmallTextBox, WrapSmallTextBox};

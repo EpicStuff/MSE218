@@ -1,7 +1,37 @@
+.left-side-content {
+    width: 10%;
+    height: 100vh;
+    float: left;
+}
+
+.right-side-content {
+    width: 90%;
+    float: left;
+    height: 100vh;
+}
+
+.left-side-content-main {
+    width: 150px;
+    height: 100vh;
+    background-color: black;
+    float: left;
+    position: fixed;
+}
+
+.right-side-content-main {
+    width: 100%;
+
+}
+
+.margins {
+    margin-left: 150px;
+}
+
+
 /* This is the container for all the content on the page. */
 .background {
     margin-top: 44px;  
-    min-height: 100vh;
+    height: 6000px;
     width: 100%;
     background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
     background-size: 10px 10px;
@@ -17,6 +47,12 @@
     background-color: #0b090a;
 }
 
+.black-background {
+
+    background-color: black;
+    
+}
+
 /* this is the black box that sits in the top left corner */
 .black-box {
     width: 10%;
@@ -28,10 +64,8 @@
     left: 0; 
 }
 
-/* The white background. The margin is pushed to accomodate the left sidebar */
+/* The white background */
 .intro {
-    margin-left: 10%;
-    width: 90%;
     background-color: #fefae0;
     color: black;
     font-size: 25px;
@@ -52,8 +86,53 @@
 
 
 
+.holder {
+    font-family: "Inconsolata";
+    text-align: center;
+    line-height: 20px;
+}
 
+.legend {
+    height: 20px;
+    width: 100%;
+    border-bottom: dashed white 2px;
+    cursor: pointer;
+}
 
+.legend:hover,
+.legend:focus {
+	opacity: 0.9;
+}
 
+.top {
+    border-top: dashed white 2px;
+}
 
+.head-legend {
+    font-family: 'Pacifico';
+    font-size: 25px;
+    text-align: center;
+    line-height: 30px;
+    
+    height: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color:white;
+}
+
+.back-arrow {
+    color: white;
+    padding: 5px;
+    background-image: linear-gradient(to left, #f28482, #c1121f, #3a86ff);
+    font-family: 'Josefin Sans';
+    margin: 20px;
+    width: 100px;
+    border-radius: 50px;
+    transition: 0.6s;
+    background-size: 200%;
+}
+
+.back-arrow:hover {
+    background-position: right;
+}
 

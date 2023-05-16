@@ -7,6 +7,7 @@
     text-align: center;
 	animation: mymove 1s ease-in;
 	border: none;
+	cursor: pointer;
 }
 
 @keyframes mymove {
@@ -21,6 +22,7 @@
 .slide:hover,
 .slide:focus {
 	transform: translateY(0.07em);
+	background-color: #3D3D3D;
 }
 
 

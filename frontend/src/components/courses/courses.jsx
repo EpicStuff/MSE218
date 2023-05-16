@@ -1,7 +1,7 @@
 import React from 'react';
 import "../../css/style.css";
 import "../../css/courses.css";
-import { GreyBox, MiniGreyBox } from "../home/boxes.jsx";
+import { FixedSmallTextBox } from "../home/boxes.jsx";
 import { Overlap } from './overlap';
 
 // make a change
@@ -124,7 +124,7 @@ export default class Courses extends React.Component {
         if(Object.keys(courses).length > 0){
           return Object.entries(courses).map(([key,value]) => {
             var colour = (this.state.selected.includes(key)) ? 'grey': 'black';
-            return ( <MiniGreyBox onClick={() => {this.selectCourse(key)}} key={key} colour={colour} content={value} />) 
+            return ( <FixedSmallTextBox onClick={() => {this.selectCourse(key)}} key={key} width={'120px'} colour={colour} content={value} />) 
         })
           //courses.map( (elem) => {
             //var c = (this.state.selected.includes(elem.uniqueID)) ? 'grey': 'black';
@@ -167,16 +167,16 @@ export default class Courses extends React.Component {
         
        
         return (
-            <div class="main-holder">
+            <div className="main-holder">
 
-                <div class="column left">
-                    <div class="content-left">
+                <div className="column left">
+                    <div className="content-left">
                         {this.createCourses(cdic)}
                     </div>
                 </div>
     
-                <div class="column right">
-                    <div class="content-right">
+                <div className="column right">
+                    <div className="content-right">
                         <div className='intro2'>
                         <h1>Course Overlap</h1>
                         <p>See a list of MSE courses. Select as many course codes, and see the overlap in content between them.</p>
