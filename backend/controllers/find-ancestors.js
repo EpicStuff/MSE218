@@ -14,11 +14,11 @@ const findAncestors = async (uniqueID) => {
    
     let current = await findNode(uniqueID);
 
-    console.log(current)
+    
 
     let ancestors = []
     for (let i = 0; i < 3; i++) {
-        ancestors.push({name: current[0].name, colour: current[0].colour});
+        ancestors.push({name: current[0].name, colour: current[0].colour, uniqueID: current[0].uniqueID});
         if (current[0].parent != 'none') {
             let parent = await findNode(current[0].parent);
             current = parent;
@@ -26,6 +26,8 @@ const findAncestors = async (uniqueID) => {
             break;  
         }
     }
+
+    console.log(ancestors)
 
     const to_return = {
         ancestors: ancestors,

@@ -23,9 +23,12 @@ export default class Lineage extends React.Component {
        ancestors_list.reverse();
         if (ancestors_list.length > 0) {
             return ancestors_list.map( (elem) => {return (
-                <div className="fade-in-one" key={elem.name}>
+                <div className="fade-in-one" key={elem.uniqueID}>
                     <div className="connection" style={{backgroundColor: colour_dict[elem.colour]}}></div>
-                    <div className="lineage-concept slide" onClick={this.props.handleDoubleClick(elem.uniqueID)}>{elem.name}</div>
+                    <div className="lineage-concept slide" onClick ={() => {
+                        this.props.handleDoubleClick(0, elem.uniqueID);
+                        this.props.handleSingleClick(0, elem.uniqueID);
+                      }} >{elem.name}</div>
                 </div> 
                  ) })
         } else {

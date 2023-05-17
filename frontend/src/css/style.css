@@ -48,14 +48,32 @@
 }
 
 .black-background {
-
     background-color: black;
-    
+}
+
+.side-holder {
+    background-color: #141414;
+    padding-top: 1px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    min-height: 270px;
+    border-radius: 15px;
 }
 
 /* this is the black box that sits in the top left corner */
 .black-box {
     width: 10%;
+    height: 44px;
+    background-color: #0b090a;
+    opacity: 0.8;
+    position: fixed;
+    top: 0;
+    left: 0; 
+}
+
+.black-box-main {
+    width: 150px;
     height: 44px;
     background-color: #0b090a;
     opacity: 0.8;
@@ -79,14 +97,14 @@
 
 .intro h1 {
     font-family: 'Inconsolata';
-    font-size: 70px;
-    padding: 40px 40px 20px 40px; 
+    font-size: 50px;
+    padding: 30px 40px 20px 40px; 
 }
 
 
 
 
-.holder {
+.legend-holder {
     font-family: "Inconsolata";
     text-align: center;
     line-height: 20px;
@@ -113,20 +131,23 @@
     font-size: 25px;
     text-align: center;
     line-height: 30px;
-    
     height: 30px;
     margin-top: 20px;
     margin-bottom: 20px;
     color:white;
 }
 
+.back-arrow-holder {
+    width: 150px;
+}
+
 .back-arrow {
     color: white;
     padding: 5px;
-    background-image: linear-gradient(to left, #f28482, #c1121f, #3a86ff);
+    background-image: linear-gradient(to left, #fcbf49, #c1121f, #3a86ff);
     font-family: 'Josefin Sans';
     margin: 20px;
-    width: 100px;
+    width: 110px;
     border-radius: 50px;
     transition: 0.6s;
     background-size: 200%;

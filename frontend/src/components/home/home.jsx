@@ -214,36 +214,40 @@ export default class Home extends React.Component {
 
     return (   
       <div className="main-container">
+      
 
         <div className="container" id="body">  
-          
+        <div className="black-box-main"></div>
           <div className="left-width" id="leftClass"> 
             <div className="left-side-content-main">
-              <div className="">
+              <div>
+                <div className="back-arrow-holder">
+                  <button className="back-arrow" onClick={this.handleBackClick.bind(this)}>
+                    <FontAwesomeIcon icon={faArrowLeft} style={{color: "#ffffff"}} />  Step Back
+                  </button>
+                </div>
               
-              <button className="back-arrow" onClick={this.handleBackClick.bind(this)}>
-              <FontAwesomeIcon icon={faArrowLeft} style={{color: "#ffffff"}} />  Step Back
-              </button>
-              
-              <div className="head-legend"> Legend </div>
-             
-                        <div className="holder">
-                   
-                            <div className="legend top" style={{backgroundColor: "#f79d65"}}>Subset</div>
-                            <div className="legend" style={{backgroundColor: "#c77dff"}}>Characterize</div>
-                            <div className="legend" style={{backgroundColor: "#99d98c"}}>Subtopic</div>
-                            <div className="legend" style={{backgroundColor: "#ff7096"}}>Derive</div>
-                            <div className="legend" style={{backgroundColor: "#00bbf9"}}>Theorem</div>
-                            <div className="legend" style={{backgroundColor: "#ef233c"}}>Constitution</div>
-                            
-                          </div>
-                       
-              <div className="head-legend"> Lineage </div>
+                <div className="side-holder">
+                  <div className="head-legend"> Legend </div>
+                    <div className="legend-holder">
+                      <div className="legend top" style={{backgroundColor: "#f79d65"}}>Subset</div>
+                      <div className="legend" style={{backgroundColor: "#c77dff"}}>Characterize</div>
+                      <div className="legend" style={{backgroundColor: "#99d98c"}}>Subtopic</div>
+                      <div className="legend" style={{backgroundColor: "#ff7096"}}>Derive</div>
+                      <div className="legend" style={{backgroundColor: "#00bbf9"}}>Theorem</div>
+                      <div className="legend" style={{backgroundColor: "#ef233c"}}>Constitution</div>                          
+                    </div>
+                </div>  
+                <div className="side-holder">
+                <div className="head-legend"> Lineage </div>
                   <div>
                     <Lineage 
                       ancestors={this.state.ancestors} 
-                      handleDoubleClick={this.handleDoubleClick.bind(this)}/>
+                      handleDoubleClick={this.handleDoubleClick.bind(this)}
+                      handleSingleClick={this.handleSingleClick.bind(this)}
+                     />
                   </div>
+              </div>
               </div>
             </div> 
             <div className="margins">

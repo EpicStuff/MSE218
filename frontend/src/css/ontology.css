@@ -6,12 +6,17 @@
     position: relative;
     width: 200px;
     height: 40px;
+    cursor: pointer;
 }
 
 /* The font style for each p, plus padding in between them */
 .labels p {
     padding: 20px 0 10px 0;
     font-family: 'Josefin Sans';
+}
+
+.labels p:hover {
+    opacity: 0.7;
 }
 
 
@@ -50,7 +55,15 @@
     font-family: "Josefin Sans";
     font-size: 16px;
     line-height: 19px;
+    margin-bottom: 10px;
 }
+
+.relation-section ul {
+    font-family: "Josefin Sans";
+    font-size: 16px;
+    line-height: 19px;
+}
+
 
 /* holder for the example trees */
 .example-side {

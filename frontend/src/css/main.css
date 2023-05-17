@@ -101,8 +101,8 @@ button {
 }
 
 .lineage-concept {
-  width: 120px;
-  background-color: #292929;
+  width: 110px;
+  background-color: #3d3d3d;
   color: white;
   border-radius: 50px;
   box-shadow: rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -112,6 +112,13 @@ button {
   padding: 5px 0 5px 0;
   cursor: pointer;
 }
+
+.lineage-concept:hover,
+.lineage-concept:focus {
+	transform: translateY(0.07em);
+	background-color: #5C5C5C;
+}
+
 
 .blackButton{
   background-color: transparent;
