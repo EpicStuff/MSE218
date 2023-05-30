@@ -14,6 +14,7 @@ const findTree = require("./controllers/find-subtree");                   // gen
 const findNodeDescription = require("./controllers/find-description");    // finds the description elements given a uniqueID
 const findConceptsbyCourses = require("./controllers/find-overlap");    // finds the description elements given a uniqueID
 const findAncestors = require("./controllers/find-ancestors")
+const searchByKeyword = require("./controllers/search")
 
 
 const mongoose = require('mongoose');  // mongoose is a framework that lets us interact with mongoDB
@@ -55,6 +56,19 @@ app.get('/person', (req, res) => {
 // ****************************************************************************************
 
 // request parameter contains the uniqueID which we want to fetch the description data
+app.get('/search/:keyword', (req, res) => { 
+  console.log(req.params.keyword)
+  const input = req.params.keyword;
+  return Promise.resolve(1).then((res) => {
+      let resp = searchByKeyword(input);
+      return resp
+    }).then((node) => {
+      res.json(node);
+    }) 
+});
+
+// request parameter contains the uniqueID which we want to fetch the description data
+// response is a json object with the definition, related courses, and related concepts
 app.get('/node/:id', (req, res) => { 
     console.log(req.params.id)
     const input = req.params.id;

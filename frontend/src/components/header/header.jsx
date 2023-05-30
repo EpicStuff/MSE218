@@ -1,6 +1,6 @@
 import { Outlet, Link } from "react-router-dom";
 import React from 'react';
-import SearchForm from "./searchForm";
+import SearchForm from "../search/searchForm";
 import "./../../css/header";
 import logo from './../../images/mselogo.png'; // Tell webpack this JS file uses this image
 
@@ -18,7 +18,9 @@ const Header = () => {
             <Link to="/about" className="nav-label">About</Link>
             <Link to="/ontology" className="nav-label">Ontology</Link>
             <Link to="/courses" className="nav-label">MSE Courses</Link>
+            <Link to="/search" className="nav-label"><div className="search-icon"></div></Link>
           </div>
+         
           
         </div>
       </nav>

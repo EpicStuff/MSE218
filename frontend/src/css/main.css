@@ -25,7 +25,6 @@ h1 {
   background: black;
   width: 100%;
   height: 30px;
-  padding-top: 10px;
   position: relative;
   bottom: 0;
   left: 0;
@@ -96,14 +95,14 @@ button {
 .connection {
   height: 20px;
   width: 2px;
-  color: white;
+  color: #fefae0;
   margin: auto;
 }
 
 .lineage-concept {
   width: 110px;
   background-color: #3d3d3d;
-  color: white;
+  color: #fefae0;
   border-radius: 50px;
   box-shadow: rgba(0, 0, 0, 0.23) 0px 6px 6px;
   text-align: center;
@@ -122,7 +121,7 @@ button {
 
 .blackButton{
   background-color: transparent;
-  color: white;
+  color: #fefae0;
   float: right;
 }
 
@@ -133,3 +132,12 @@ button {
 }
 
 
+.results {
+  position: fixed;
+  height: 100vh;
+  width: 200px;
+  background-color: aqua;
+  right: 25%;
+  top: 44px;
+  display: block;
+}

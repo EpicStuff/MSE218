@@ -26,10 +26,11 @@ export default class Home extends React.Component {
       ancestors: [],
       previousData: [],
       data: thedata,     // this holds the nested tree structure with the current root node on top
-      uniqueID: {        // uniqueID holds the information for the sidebar of a the selected uniqueID
+      nodeInfo: {        // uniqueID holds the information for the sidebar of a the selected uniqueID
         description: "",
         courses: [],
-        related: []
+        related: [],
+        laTex: false
       }
     };
   }
@@ -81,7 +82,7 @@ export default class Home extends React.Component {
   // The parameter ITEM object came from the database query, and it holds the courses, concepts, and definition as items
   // Since the state uniqueID is defined in this class, it affects the content within the Description class since its passed into that
   changeUniqueID(item) {
-    this.setState({uniqueID: item});
+    this.setState({nodeInfo: item});
   }
 
   // hidden gets set to the key of the node in which we want to keep unhidden
@@ -188,7 +189,6 @@ export default class Home extends React.Component {
   }
 
   fetchLineage(id) {
-    //let id = this.state.currentSelected;
     const url = "http://localhost:3500/grandparent/";
     console.log("the uniqueID Passvdded in", id);
     fetch(url.concat(id))
@@ -196,8 +196,7 @@ export default class Home extends React.Component {
             if (res.status !== 200) {
                 throw Error(res.status);
             } 
-            return res.json();
-            
+            return res.json();  
         })
         .then((res) => {
             this.setState({ancestors: res.ancestors})
@@ -251,31 +250,31 @@ export default class Home extends React.Component {
               </div>
             </div> 
             <div className="margins">
-            <div className="right-side-content-main">
-            <SizeMe>{({ size }) => 
-  
-              <div style={{width:"100%"}}>
+              <div className="right-side-content-main">
+                <SizeMe>{({ size }) => 
+                  <div style={{width:"100%"}}>
+                    <button className={btn_class} id="shiftButton" onClick={this.screenShift.bind(this)}>
+                      <FontAwesomeIcon icon={faArrowsLeftRightToLine} size='lg'/>
+                    </button>
+
+                    <div id="treeContent">
+                      <TreeContent 
+                          select={this.state.select}
+                          data={this.state.data} 
+                          width={size.width} 
+                          hidden={this.state.hidden}
+                          height={"700"} 
+                          uniqueID={this.state.uniqueID} 
+                          setSelected={this.setSelected.bind(this)}
+                          handleDoubleClick={this.handleDoubleClick.bind(this)}
+                          handleSingleClick={this.handleSingleClick.bind(this)}
+                          changeUniqueID={this.changeUniqueID.bind(this)}/>
+                    </div>
+
+                  </div>}
+                </SizeMe>
                 
-                <button className={btn_class} id="shiftButton" onClick={this.screenShift.bind(this)}>
-                <FontAwesomeIcon icon={faArrowsLeftRightToLine} size='lg'/>
-            
-                </button>
-                <div id="treeContent">
-                  <TreeContent 
-                      select={this.state.select}
-                      data={this.state.data} 
-                      width={size.width} 
-                      hidden={this.state.hidden}
-                      height={"700"} 
-                      uniqueID={this.state.uniqueID} 
-                      setSelected={this.setSelected.bind(this)}
-                      handleDoubleClick={this.handleDoubleClick.bind(this)}
-                      handleSingleClick={this.handleSingleClick.bind(this)}
-                      changeUniqueID={this.changeUniqueID.bind(this)}/>
-                </div>
-              </div>}
-            </SizeMe>
-            </div>
+              </div>
             </div>
           </div>
                    
@@ -284,7 +283,7 @@ export default class Home extends React.Component {
           <div className={right_div_class}>
             <div style={{width:"100%"}}>
               <Description 
-                  uniqueID={this.state.uniqueID} 
+                  nodeInfo={this.state.nodeInfo} 
                   changeUniqueID={this.changeUniqueID.bind(this)}
                   handleDoubleClick={this.handleDoubleClick.bind(this)}
                   handleSingleClick={this.handleSingleClick.bind(this)}/>

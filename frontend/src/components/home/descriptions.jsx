@@ -2,6 +2,9 @@ import React from "react";
 //import "../../css/boxes.css";
 import { DefinitionBox, WrapSmallTextBox } from "./boxes.jsx";
 
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
+import parse from 'html-react-parser';
 
 
 export default class Description extends React.Component { 
@@ -41,16 +44,22 @@ export default class Description extends React.Component {
     }
 
     render () {  
-        const description = this.props.uniqueID.description;
-        const courses = this.props.uniqueID.courses;
-        const related = this.props.uniqueID.related;
+        const description = this.props.nodeInfo.description;
+        const courses = this.props.nodeInfo.courses;
+        const related = this.props.nodeInfo.related;
+        const laTex = this.props.nodeInfo.laTex;
+        const x = `k_{n+1} = n^2 + k_n^2 - k_{n-1}`
+        const y = `adding in a &#120591;`
+        const z = 'hey testing this $_t_2$ and another one $_x_2$ etc. Adding a longer one in $_k_{n+1} = n^2 + k_n^2 - k_{n-1}$'
        
     
         return (
             <div>
-              <DefinitionBox title={"Definition"} content={description} />
+              <DefinitionBox title={"Definition"} content={description} laTex={laTex} />
               <div className="grey-box">
                 <div className="holder">
+                <p>{parse(y)}</p>
+                <p>I will display &#9824;</p>
                   {this.createRelated(related)}
                 </div>
               </div>

@@ -10,7 +10,7 @@ class Overlap extends React.Component {
     // the input is an array of courses which need to be displayed
     generateConcepts(conceptArray) {
         if (conceptArray.length > 0) {
-            return conceptArray.map( (elem) => {return ( <WrapSmallTextBox key={elem} content={elem} />) })
+            return conceptArray.map( (elem) => {return ( <WrapSmallTextBox key={elem} content={elem} colour={'#292929'} />) })
         } else {
             return []
         }

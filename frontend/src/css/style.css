@@ -10,6 +10,7 @@
     height: 100vh;
 }
 
+
 .left-side-content-main {
     width: 150px;
     height: 100vh;
@@ -31,7 +32,7 @@
 /* This is the container for all the content on the page. */
 .background {
     margin-top: 44px;  
-    height: 6000px;
+    height: 4000px;
     width: 100%;
     background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
     background-size: 10px 10px;
@@ -60,6 +61,7 @@
     min-height: 270px;
     border-radius: 15px;
 }
+
 
 /* this is the black box that sits in the top left corner */
 .black-box {

@@ -16,15 +16,21 @@ const findDescription = async (uniqueID) => {
 
     const node = await findbyUniqueID(uniqueID);
 
+   
     const description = node[0].description;
     const courses = node[0].courses;
     const related = node[0].related;
- 
+    const laTex = node[0].laTex;
+    
+    
     const to_return = {
         description: description,
         courses: courses,
-        related: related
+        related: related,
+        laTex: laTex
     };
+
+    console.log(to_return)
     
     return (
         to_return

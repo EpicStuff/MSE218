@@ -118,7 +118,7 @@ class TreeContent extends React.Component {
                     } 
 
                     var background_colour = (key != this.props.select) ? "#292929": "#fefae0";
-                    var font_colour = (key != this.props.select) ? "white": "black";
+                    var font_colour = (key != this.props.select) ? "#fefae0": "black";
                     var isHidden = (key == this.props.hidden || this.props.hidden == null) ? "block": "none";
                     
                   

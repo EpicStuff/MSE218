@@ -34,6 +34,10 @@ const conceptSchema = new Schema({
         type: Array,
         default: [],
     },
+    laTex: {
+        type: Boolean,
+        default: false
+    }
 })
 
 

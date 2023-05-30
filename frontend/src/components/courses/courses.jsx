@@ -123,12 +123,9 @@ export default class Courses extends React.Component {
         console.log(courses)
         if(Object.keys(courses).length > 0){
           return Object.entries(courses).map(([key,value]) => {
-            var colour = (this.state.selected.includes(key)) ? 'grey': 'black';
-            return ( <FixedSmallTextBox onClick={() => {this.selectCourse(key)}} key={key} width={'120px'} colour={colour} content={value} />) 
+            var colour = (this.state.selected.includes(key)) ? '#D36135': '#141414';
+            return ( <FixedSmallTextBox onClick={() => {this.selectCourse(key)}} key={key} width={'auto'} colour={colour} content={value} />) 
         })
-          //courses.map( (elem) => {
-            //var c = (this.state.selected.includes(elem.uniqueID)) ? 'grey': 'black';
-            //return ( <MiniGreyBox onClick={() => {this.select(elem.uniqueID)}} key={elem.uniqueID} colour={c} content={elem.name} />) 
         } else {
           return []
         }
@@ -177,27 +174,17 @@ export default class Courses extends React.Component {
     
                 <div className="column right">
                     <div className="content-right">
-                        <div className='intro2'>
-                        <h1>Course Overlap</h1>
-                        <p>See a list of MSE courses. Select as many course codes, and see the overlap in content between them.</p>
-                        <button onClick={() => {this.con()}}>c</button>
-                        
-                        
+                        <div className='intro'>
+                            <h1>Course Overlap</h1>
+                            <p>See a list of MSE courses. Select as many course codes, and see the overlap in content between them.</p>
                         </div>
+                        
+                        <button className="select-button" onClick={() => {this.con()}}>Select</button>
                         <div className='holder-for-concepts'>
                         <Overlap conceptArray={this.state.concepts}/>
                         </div>
                     </div>
-                </div>
-
-
-
-
-
-
-              
-             
-                
+                </div>           
             </div>
         );
     }

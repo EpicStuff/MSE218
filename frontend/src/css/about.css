@@ -2,14 +2,53 @@
 
 .vvv {
     background-color: #0b090a;
-    height: 100vh;
+    height: 2000px;
 }
 
 
 
 
 .about-content {
-    color: white;
+    margin: 40px;
+}
+
+.top-holder {
+    display: table;
+    clear: both;
+}
+
+.photo {
+    float: left;
+    height: 470px;
+    width: 30%;
+    
+    background-color: aqua;
+}
+
+.about-text {
+    float: left;
+    height: 470px;
+    width: 70%;
+    background-color: #292929;
+}
+
+.about-text p {
+    padding: 40px;
+}
+
+
+.about-text h1 {
+    padding-left: 40px;
     font-family: "Inconsolata";
-    font-size: 20px;
+    color: pink;
+}
+
+.bottom-holder {
+    min-height: 30px;
+    background-color: #292929;
+    width: 100%;
+}
+
+.bottom-holder p {
+    padding: 40px;
 }
