@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 const conceptSchema = new Schema({
     uniqueID: {
         type: String, 
-        required: true
+        required: true,
+        unique: true     // note that this only works when there's no problems of duplicates already in the database
     },
     name: {
         type: String,

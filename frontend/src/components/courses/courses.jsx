@@ -1,7 +1,7 @@
 import React from 'react';
-import "../../css/style.css";
+
 import "../../css/courses.css";
-import { FixedSmallTextBox } from "../home/boxes.jsx";
+import { CourseSmallTextBox } from "../home/boxes.jsx";
 import { Overlap } from './overlap';
 
 // make a change
@@ -124,7 +124,7 @@ export default class Courses extends React.Component {
         if(Object.keys(courses).length > 0){
           return Object.entries(courses).map(([key,value]) => {
             var colour = (this.state.selected.includes(key)) ? '#D36135': '#141414';
-            return ( <FixedSmallTextBox onClick={() => {this.selectCourse(key)}} key={key} width={'auto'} colour={colour} content={value} />) 
+            return ( <CourseSmallTextBox onClick={() => {this.selectCourse(key)}} key={key} colour={colour} content={value} />) 
         })
         } else {
           return []
@@ -165,7 +165,6 @@ export default class Courses extends React.Component {
        
         return (
             <div className="main-holder">
-
                 <div className="column left">
                     <div className="content-left">
                         {this.createCourses(cdic)}

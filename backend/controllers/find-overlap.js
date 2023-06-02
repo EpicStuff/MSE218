@@ -1,27 +1,30 @@
+
 const Concepts = require('../model/Concept'); // Concepts is the collection
 
-
-// returns an array of one object, which is the object with the uniqueID of x
-const findbyOverlap = async(x) => {
+// **** INPUT: Array with each course code as an item
+// **** OUTPUT: an array with all nodes which contain all the courseID's from the input array in their courses field
+const findbyOverlap = async(courseIDsArray) => {
     try {
-        return await Concepts.find({courses: {$all: x}}); 
+        return await Concepts.find({courses: {$all: courseIDsArray}}); 
     } catch(err) {
         console.log(err)
     }
 }
 
+// *******************************************************
+// ****************** EXPORTED FUNCTION ****************** 
+// *******************************************************
+
+// **** INPUT: String with course codes separated by commas
+// **** OUTPUT: an object with one field (concepts) which contain an array of all the names of concepts which are common to the courses in the string
 const findConceptsbyCourses = async (courseIDs) => { 
-    // PARAM
-    //const uniqueID = "function0"; 
-    courseIDsArray = courseIDs.split(",");
-    console.log(courseIDs)
-    const nodes = await findbyOverlap(courseIDsArray);
-    console.log(nodes)
+
+    courseIDsArray = courseIDs.split(",");                 // courseID's are sent via a string with commas in between (ie 'MSE101,MSE202')
+ 
+    const nodes = await findbyOverlap(courseIDsArray);     
 
     var concepts = []
     for (let i = 0; i < nodes.length; i++) {
-        console.log(concepts)
-        console.log(nodes[i].name)
         concepts.push(nodes[i].name);
     }
 

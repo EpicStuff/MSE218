@@ -1,3 +1,5 @@
+
+
 const Concepts = require('../model/Concept'); // Concepts is the collection
 
 // returns an array of objects who have the parent with uniqueID x
@@ -108,34 +110,40 @@ async function trim(subtree, max_depth, max_width) {
     }
 }
 
-// this is the main function that is exported
-async function generateSubtree(uniqueID) {
+
+// *******************************************************
+// ****************** EXPORTED FUNCTION ****************** 
+// *******************************************************
+
+
+// **** INPUT: string of the uniqueID of the node we want at the root
+// **** OUTPUT: an object with a nested structure with all the children we want to display
+const generateSubtree = async (uniqueID) => { 
+    
     try {
-    // Parameters
-    const max_depth = 4;
-    const max_width = 10;
 
-    const root = await findbyUniqueID(uniqueID);
-    console.log('current root', root);
-    const subtree = {
-        uniqueID: root[0].uniqueID, 
-        name: root[0].name, 
-        shape: root[0].shape, 
-        colour: root[0].colour, 
-        children: []
-    }
-   
-    subtree.children = await recursion(root[0].uniqueID, 0, max_depth);
+        const max_depth = 4;
+        const max_width = 10;
 
-    await trim(subtree, max_depth, max_width);
+        const root = await findbyUniqueID(uniqueID);
+       
+        const subtree = {
+            uniqueID: root[0].uniqueID, 
+            name: root[0].name, 
+            shape: root[0].shape, 
+            colour: root[0].colour, 
+            children: []
+        }
+    
+        subtree.children = await recursion(root[0].uniqueID, 0, max_depth);
 
-    return (
-        subtree
-    );
+        await trim(subtree, max_depth, max_width);
 
+        return (
+            subtree
+        );
 
-    } catch(err){
-        console.log('there is an error')
+    } catch(err) {
         console.log(err)
     }
 }

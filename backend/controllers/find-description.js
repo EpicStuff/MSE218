@@ -1,39 +1,43 @@
+
+
 const Concepts = require('../model/Concept'); // Concepts is the collection
 
-
-// returns an array of one object, which is the object with the uniqueID of x
-const findbyUniqueID = async(x) => {
+// **** INPUT: string of the uniqueID of the node we're trying to access
+// **** OUTPUT: An array of one object, which is the object with the uniqueID of x
+const findbyUniqueID = async(uniqueID) => {
     try {
-        return await Concepts.find({uniqueID: x}); 
+        return await Concepts.find({uniqueID: uniqueID}); 
     } catch(err) {
         console.log(err)
     }
 }
 
+
+// *******************************************************
+// ****************** EXPORTED FUNCTION ****************** 
+// *******************************************************
+
+
+// **** INPUT: string of the uniqueID of the node we're trying to access
+// **** OUTPUT: an object with four fields: {description, courses, related, laTex} for the given uniqueID
 const findDescription = async (uniqueID) => { 
-    // PARAM
-    //const uniqueID = "function0";
 
     const node = await findbyUniqueID(uniqueID);
 
-   
     const description = node[0].description;
     const courses = node[0].courses;
     const related = node[0].related;
     const laTex = node[0].laTex;
     
-    
-    const to_return = {
+    const results = {
         description: description,
         courses: courses,
         related: related,
         laTex: laTex
     };
-
-    console.log(to_return)
     
     return (
-        to_return
+        results
     );
 }
 

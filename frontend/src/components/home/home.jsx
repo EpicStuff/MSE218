@@ -7,7 +7,6 @@ import TreeContent from "./content";
 import Description from "./descriptions";
 import Lineage from "./lineage";
 
-import "../../css/style.css";
 import { SizeMe } from 'react-sizeme';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowsLeftRightToLine, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
@@ -213,8 +212,6 @@ export default class Home extends React.Component {
 
     return (   
       <div className="main-container">
-      
-
         <div className="container" id="body">  
         <div className="black-box-main"></div>
           <div className="left-width" id="leftClass"> 

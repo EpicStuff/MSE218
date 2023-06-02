@@ -1,6 +1,6 @@
 import React from 'react';
 import "../../css/ontology.css";
-import "../../css/style.css";
+
 import CreateTree from './tree.jsx';
 import { SizeMe } from 'react-sizeme';
 import {subset, constitution, theorem, subtopic, characterize, derive} from './data';

@@ -1,7 +1,4 @@
-/* Change to no scroll bar */
-::-webkit-scrollbar {
-    width: 0px;
-}
+
 
 /* shifts content down */
 .main-holder {
@@ -20,7 +17,6 @@
     width: 10%;
 }
 
-
 .right { 
     width: 90%;
     background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
@@ -32,8 +28,6 @@
     margin-top: 5px;
 }
 
-
-
 .holder-for-concepts {
     margin: auto;
     width: 50%;
@@ -41,7 +35,6 @@
     background-color: transparent;
     display: flex;
 }
-
 
 .select-button {
     color: white;
@@ -64,49 +57,4 @@
 
 
 
-
-
-
-/*
-
-.position-courses{
-    position: relative;
-    margin-left: 10%;
-}
-
-
-.holder {
-    float: right;
-}
-
-
-.content p {
-    font-size: 18px;
-    line-height: 20px;
-    color: white;
-    font-family: 'Josefin Sans';
-}
-
-
-
-.vertical-bar-long {
-    position: relative;
-    width: 10%;
-    height: 100vh;
-    background-color: #0b090a;
-}
-
-.black-box-long {
-    width: 10%;
-    height: 44px;
-    background-color: #0b090a;
-    opacity: 0.8;
-    position: relative;
-    top: 0;
-    left: 0; 
-}
-*/
-
-
-/* The white background. The margin is pushed to accomodate the left sidebar */
 

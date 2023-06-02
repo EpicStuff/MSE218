@@ -1,6 +1,6 @@
 
-/********************** MAIN THINGS **********************/
-/*********************************************************/
+/********************** GENERAL SET UP **********************/
+/************************************************************/
 
 body { margin: 0; padding: 0; }
 
@@ -16,72 +16,6 @@ h1 {
   margin:0;
 }
 
-.main-container {
-  margin-top: 44px;  
-  min-height: 100%;
-}
-
-.footer {
-  background: black;
-  width: 100%;
-  height: 30px;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  text-align: center;
-}
-
-
-/******************* LEFT RIGHT SLIDER *******************/
-/*********************************************************/
-.container {
-  display: flex;
-  height: 700px;
-  width: 100%;
-  opacity: 0.8;
-  background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
-  /*background-image: radial-gradient(#4a4e69 0.5px, #8D99AE 0.5px);*/
-  background-size: 10px 10px;
-}
-
-.left-width {
-  width: 75%;
-  /*display: flex;*/
-  height: 700px;
-  align-items: center;
-  justify-content: center;
-}
-
-.full-screen {
-  width: 100%;
-  height: 700px;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.initial-right-width {
-  flex: 1;
-  display: flex;
-  background-color: #0A0A0A;
-  height: 100%
-}
-
-.dont-show {
-  display: none;
-}
-
-.resizer {
-  background-color: #000000;
-  cursor: ew-resize;
-  height: 100%;
-  width: 4px;
-}
-
-
-/************************* OTHER *************************/
-/*********************************************************/
-
 button {
   margin: 2px;
   margin-bottom: 0px;
@@ -91,14 +25,73 @@ button {
   background-color: transparent;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
 
+/************************* MAIN PAGE ************************/
+/************************************************************/
+
+/* ROOT CONTAINER ON MAIN PAGE */
+.main-container {
+  margin-top: 44px;  
+  min-height: 100%;
+}
+
+/* FOOTER ON MAIN PAGE */
+.footer {
+  background: black;
+  width: 100%;
+  height: 30px;
+  position: relative;
+}
+
+/* SECOND CONTAINER ON MAIN PAGE - holds everything but the footer. Adds background */ 
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  opacity: 0.8;  
+  background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
+  background-size: 10px 10px;
+}
+
+/* LEFT WIDTH HOLDS LEGEND SIDEBAR AND MAIN CONTENT */
+.left-width {
+  width: 75%;
+  height: 100vh;
+}
+
+/* RIGHT DESCRCIPTION BAR OCCUPIES THE REST OF THE SPACE BY USING SIZEME. STARTS WITH DISPLAY: FLEX */
+.initial-right-width {
+  flex: 1;
+  display: flex;
+  background-color: #0A0A0A;
+  height: 100%
+}
+
+/* WHEN BUTTON IS PRESSED, INITIAL-RIGHT-WIDTH CLASS CHANGES TO DONT-SHOW */
+/* ALSO USED FOR THE RESIZER */
+.dont-show {
+  display: none;
+}
+
+/* RESIZER IS THE SMALL BLACK BAR BETWEEN THE CONTENT AND THE DESCRIPTION */
+.resizer {
+  background-color: #000000;
+  cursor: ew-resize;
+  height: 100%;
+  width: 4px;
+}
+
+/* THE LINE BETWEEN NODES ON THE LINEAGE ANCESTRY */
 .connection {
   height: 20px;
   width: 2px;
-  color: #fefae0;
   margin: auto;
 }
 
+/* LINEAGE CONCEPT NODE - should check if this is different from other ones */
 .lineage-concept {
   width: 110px;
   background-color: #3d3d3d;
@@ -118,20 +111,239 @@ button {
 	background-color: #5C5C5C;
 }
 
-
+/* BLACK VERSION OF THE BUTTON WITH THE TWO ARROWS IN THE TOP RIGHT CORNER */
 .blackButton{
   background-color: transparent;
   color: #fefae0;
   float: right;
 }
 
+/* WHITE VERSION OF THE BUTTON WITH THE TWO ARROWS IN THE TOP RIGHT CORNER */
 .whiteButton{
   background-color: transparent;
   color: black;
   float: right;
 }
 
+/* MAIN SCREEN LEFT SIDEBAR HOLDER */
+.left-side-content-main {
+  width: 150px;
+  height: 100vh;
+  background-color: black;
+  float: left;
+  position: fixed;
+}
 
+/* MAIN SCREEN MAIN HOLDER */
+.right-side-content-main {
+  width: 100%;
+}
+
+/* MARGIN TO ADJUST FOR FIXED LEFT SIDEBAR */
+.margins {
+  margin-left: 150px;
+}
+
+/* LIGHTER BLACK BOX THAT HOLDS LEGEND AND LINEAGE */
+.side-holder {
+  background-color: #141414;
+  padding-top: 1px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  min-height: 270px;
+  border-radius: 15px;
+}
+
+/* TOP LEFT CORNER BLACK BOX */
+.black-box-main {
+  width: 150px;
+  height: 44px;
+  background-color: #0b090a;
+  opacity: 0.8;
+  position: fixed;
+  top: 0;
+  left: 0; 
+}
+
+/* LEFT SIDEBAR ON HOME PAGE */
+.legend-holder {
+  font-family: "Inconsolata";
+  text-align: center;
+  line-height: 20px;
+}
+
+/* EACH ELEMENT OF LEGEND */
+.legend {
+  height: 20px;
+  width: 100%;
+  border-bottom: dashed white 2px;
+  cursor: pointer;
+}
+
+.legend:hover,
+.legend:focus {
+  opacity: 0.9;
+}
+
+/* TOP ELEMENT OF LEGEND - ADD BORDER ON TOP */
+.top {
+  border-top: dashed white 2px;
+}
+
+/* TITLE TEXT FOR LEGEND AND LINEAGE */
+.head-legend {
+  font-family: 'Pacifico';
+  font-size: 25px;
+  text-align: center;
+  line-height: 30px;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color:white;
+}
+
+/* FANCY BACK BUTTON */
+.back-arrow-holder {
+  width: 150px;
+}
+
+/* FANCY BACK BUTTON */
+.back-arrow {
+  color: white;
+  padding: 5px;
+  background-image: linear-gradient(to left, #fcbf49, #c1121f, #3a86ff);
+  font-family: 'Josefin Sans';
+  margin: 20px;
+  width: 110px;
+  border-radius: 50px;
+  transition: 0.6s;
+  background-size: 200%;
+}
+
+/* FANCY BACK BUTTON */
+.back-arrow:hover {
+  background-position: right;
+}
+
+
+/*********************** MAIN PAGE END **********************/
+/************************************************************/
+
+
+
+/************************************************************/
+/********************* DESCRIPTION BOXES ********************/
+/************************************************************/
+
+
+/* SAME FOR ALL THREE BOXES ON THE RIGHT DESCRIPTION SIDEBAR */
+.grey-box {
+  background: #141414;
+  font-size: 15px;
+  padding: 20px; 
+  color: #fefae0;
+  font-family: "Josefin Sans";
+  border-radius: 15px;
+  text-align: left;
+  margin: 15px;
+}
+
+/* READS DEFINITION */
+.grey-box h1 {
+font-size: 20px;
+font-family: "Inconsolata";
+padding-bottom: 15px;
+}
+
+/* THIS IS USED IN THE LATEX PARSER FUNCTION SO THAT THE <p> TAGS DONT HAVE NEWLINE */
+.no-break p {
+display: inline;
+}
+
+/* THIS IS USED FOR ALL THE WRAP SMALL TEXT BOX CLASS ELEMENTS. ALL THE NODES IN THE DESCRIPTION */
+.wrap-small-text-box {
+  padding: 5px 10px 5px 10px;
+  color: #fefae0;
+  font-family: 'Mukta';
+  border-radius: 50px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: small;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  background-color: #3d3d3d;
+  transition: 0.6s;
+}
+.wrap-small-text-box:hover,
+.wrap-small-text-box:focus {
+transform: translateY(0.07em);
+background-color: #5C5C5C;
+}
+
+/* COURSES PAGE LEFT SIDEBAR */
+.course-small-text-box {
+padding: 7px; 
+color: #fefae0;
+font-family: 'Lato';
+border-radius: 7px;
+text-align: center;
+display: inline-block;
+font-size: 13px;
+cursor: pointer;
+margin: 5px 10px 5px 10px;
+}
+
+.course-small-text-box:hover,
+.course-small-text-box:focus {
+opacity: 0.7;
+}
+
+/******************* DESCRIPTION BOXES END ******************/
+/************************************************************/
+
+
+/************************************************************/
+/***************** REUSED ON DIFFERENT PAGES ****************/
+/************************************************************/
+
+/* WHITE BACKGROUND USED ON ABOUT / ONTOLOGY / COURSES */
+.intro {
+  background-color: #fefae0;
+  color: black;
+  font-size: 25px;
+  border-bottom: 5px solid pink;
+}
+
+.intro p {
+  font-family: 'Inconsolata';
+  padding: 20px 100px 40px 40px;   /* TOP RIGHT BOTTOM LEFT*/
+}
+
+.intro h1 {
+  font-family: 'Inconsolata';
+  font-size: 50px;
+  padding: 30px 40px 20px 40px; 
+}
+
+
+
+/* This is the container for all the content on the page. */
+.background {
+  margin-top: 44px;  
+  height: 4000px;
+  width: 100%;
+  background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
+  background-size: 10px 10px;
+  background-color: #e5e5f7;
+  opacity: 0.8;
+}
+
+
+/* SEARCH */
 .results {
   position: fixed;
   height: 100vh;
@@ -140,4 +352,44 @@ button {
   right: 25%;
   top: 44px;
   display: block;
+}
+
+
+.left-side-content {
+  width: 10%;
+  height: 100vh;
+  float: left;
+}
+
+.right-side-content {
+  width: 90%;
+  float: left;
+  height: 100vh;
+}
+
+
+/* This is the bar that sits on the left */
+.vertical-bar {
+  position: fixed;
+  width: 10%;
+  min-width: 120px;
+  height: 100vh;
+  background-color: #0b090a;
+}
+
+.black-background {
+  background-color: black;
+}
+
+
+/* */
+.black-box {
+  width: 10%;
+  min-width: 120px;
+  height: 44px;
+  background-color: #0b090a;
+  opacity: 0.8;
+  position: fixed;
+  top: 0;
+  left: 0; 
 }

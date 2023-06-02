@@ -1,7 +1,9 @@
+
+
 {
-    "id1": "APS110H1: Engineering Chemistry and Materials Science",
-    "id2": "APS111H1: Engineering Strategies & Practice",
-    "id3": "CIV100H1: Mechanics",
-    "id4": "MAT186H1: Calculus",
-    "id5": "MAT188H1: Linear Algebra"
+    "_id": {
+      "$oid": "64763c80f219aec85ac03c5f"
+    }
 }
+
+

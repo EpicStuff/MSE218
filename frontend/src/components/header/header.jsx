@@ -1,6 +1,5 @@
 import { Outlet, Link } from "react-router-dom";
 import React from 'react';
-import SearchForm from "../search/searchForm";
 import "./../../css/header";
 import logo from './../../images/mselogo.png'; // Tell webpack this JS file uses this image
 
@@ -10,8 +9,8 @@ const Header = () => {
       <nav>
         <div className="nav-bar">
           <div className="logo-and-words">
-            <img src={logo} className="logo" width="30px" alt="Logo" />
-            <div className="logo-words">Knowledge<br></br><span className="pink">Engine</span></div>
+            <img src={logo} width="30px" alt="Logo" />
+            <p>Knowledge<br></br>Engine</p>
           </div>
           <div className="nav-links">
             <Link to="/" className="nav-label">Home</Link>
@@ -20,8 +19,6 @@ const Header = () => {
             <Link to="/courses" className="nav-label">MSE Courses</Link>
             <Link to="/search" className="nav-label"><div className="search-icon"></div></Link>
           </div>
-         
-          
         </div>
       </nav>
       <Outlet />
@@ -29,8 +26,5 @@ const Header = () => {
   )
 };
 
-/**<div className="search">
-            <SearchForm />
-          </div> */
 
 export default Header;

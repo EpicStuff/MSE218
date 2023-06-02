@@ -1,19 +1,22 @@
-const mongoose = require('mongoose');
-const Node = require('../model/tree');
 
-mongoose.connect('mongodb+srv://andreamitchell:msedatabase@cluster0.j92oqib.mongodb.net/?retryWrites=true&w=majority');
- 
+const Concepts = require('../model/Concept'); // Concepts is the collection
 
-async function run() {
+
+// *******************************************************
+// ****************** EXPORTED FUNCTION ****************** 
+// *******************************************************
+
+// **** INPUT: no input
+// **** OUTPUT: no return
+const insertNodes = async () => { 
   try {
-    const treeNode = await Node.create({  // updateOne instead of create to update instead of creating new data
-      name: "1A", 
-      parent: "some parent"
-    })
-    console.log(treeNode);
+    const treeNode = await Concepts.insertMany([
+      {name: "andiee", uniqueID: "andi-2" }
+    ])
+    console.log("successfully added node(s) to database")
   } catch(err) {
     console.log(err.message);
   }
 }
 
-run()
+module.exports = insertNodes;

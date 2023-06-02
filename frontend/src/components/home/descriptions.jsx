@@ -1,10 +1,9 @@
 import React from "react";
-//import "../../css/boxes.css";
+
 import { DefinitionBox, WrapSmallTextBox } from "./boxes.jsx";
 
-import 'katex/dist/katex.min.css';
-import { InlineMath, BlockMath } from 'react-katex';
-import parse from 'html-react-parser';
+
+
 
 
 export default class Description extends React.Component { 
@@ -57,16 +56,11 @@ export default class Description extends React.Component {
             <div>
               <DefinitionBox title={"Definition"} content={description} laTex={laTex} />
               <div className="grey-box">
-                <div className="holder">
-                <p>{parse(y)}</p>
                 <p>I will display &#9824;</p>
-                  {this.createRelated(related)}
-                </div>
+                {this.createRelated(related)}
               </div>
               <div className="grey-box">
-                <div className="holder">
                   {this.createCourses(courses)}
-                </div>
               </div>
             </div>
         );

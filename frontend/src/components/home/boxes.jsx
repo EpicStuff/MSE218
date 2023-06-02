@@ -1,6 +1,6 @@
 import React from "react";
-import "../../css/boxes";
-import "../../css/main";
+
+
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
 
@@ -9,15 +9,14 @@ class DefinitionBox extends React.Component {
     super(props);
   }
 
-  parser(input) {
-    let list = input.split("$")
-    console.log(list)
-    if (list.length > 0) {
-      return list.map( (elem) => {
-        if (elem[0] == "_") {
-          return <InlineMath math={elem.slice(1)}/>
+  parser(content) {                   
+    let content_list = content.split("$")
+    if (content_list.length > 0) {
+      return content_list.map( (elem) => {
+        if (elem[0] == "*") {
+          return <InlineMath key={elem} math={elem.slice(1)}/>
         } else {
-          return <p>{elem}</p>
+          return <p  key={elem}>{elem}</p>
         }
       })
     } else {
@@ -55,27 +54,25 @@ class WrapSmallTextBox extends React.Component {
 
   render() {
     return (
-      <div className="wrap-small-text-box change-on-hover" style={{backgroundColor: this.props.colour}} onClick={this.props.onClick}>
+      <div className="wrap-small-text-box" style={{backgroundColor: this.props.colour}} onClick={this.props.onClick}>
         <p>{this.props.content}</p>       
       </div>
     );
   }
 }
 
-
-
-class FixedSmallTextBox extends React.Component {
+class CourseSmallTextBox extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render() {
     return (
-      <div className="fixed-small-text-box change-on-hover" style={{backgroundColor: this.props.colour, width: this.props.width}} onClick={this.props.onClick}>
+      <div className="course-small-text-box" style={{backgroundColor: this.props.colour}} onClick={this.props.onClick}>
         <p>{this.props.content}</p>       
       </div>
     );
   }
 }
 
-export {DefinitionBox, FixedSmallTextBox, WrapSmallTextBox};
+export {DefinitionBox, CourseSmallTextBox, WrapSmallTextBox};

@@ -36,7 +36,7 @@ export default class About extends React.Component {
                                     <h1>Origin of the Project</h1>
                                     <p>
                                     This website was created as a MSE master's thesis project in 2023. The project was lead by Andrea Mitchell who designed and implemented the site. The project was supervised by Dr. Glenn Hibbard, Chair of the MSE Department. 
-                                    
+                
                                     Dr. Hibbard initiated an effort to restructure the MSE curriculum, to create a more cohesive organization to course content, where concepts are linked over multiple courses, as a way to solidify the understadning of difficult concepts. 
                                     
                                     The Knowledge Engine was built to act as a platform for emphasizing those connections between courses. 
