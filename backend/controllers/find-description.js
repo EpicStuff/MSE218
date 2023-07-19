@@ -27,13 +27,13 @@ const findDescription = async (uniqueID) => {
     const description = node[0].description;
     const courses = node[0].courses;
     const related = node[0].related;
-    const laTex = node[0].laTex;
+    const LaTeX = node[0].LaTeX;
     
     const results = {
         description: description,
         courses: courses,
         related: related,
-        laTex: laTex
+        LaTeX: LaTeX
     };
     
     return (

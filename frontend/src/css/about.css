@@ -1,54 +1,78 @@
 
-
-.vvv {
-    background-color: #0b090a;
-    height: 2000px;
+/* FILLS IN THE EMPTY SIDEBAR ON THE LEFT ON ABOUT PAGE */
+.black-background {
+    background-color: black;
+    height: 4000px;
 }
 
 
+.headshot img {
+    border-radius: 50%;
+    width: 80%;
+    transform: translate(15%);
+}
 
+.about-content-holder {
+    margin-top: 40px;
+}
 
 .about-content {
-    margin: 40px;
+    margin: auto;
+    width: 65%;
 }
 
-.top-holder {
-    display: table;
-    clear: both;
+.side-by-side {
+    min-height: 250px;
 }
 
-.photo {
+
+.headshot {
     float: left;
-    height: 470px;
     width: 30%;
-    
-    background-color: aqua;
+}
+
+
+.people-description {
+    float: left;
+    width: 70%;
 }
 
 .about-text {
-    float: left;
-    height: 470px;
-    width: 70%;
     background-color: #292929;
 }
 
 .about-text p {
-    padding: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
+    font-size: 16px;
+    line-height: 22px;
 }
 
-
 .about-text h1 {
-    padding-left: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 25px;
     font-family: "Inconsolata";
     color: pink;
 }
 
-.bottom-holder {
-    min-height: 30px;
-    background-color: #292929;
-    width: 100%;
+.about-text h2 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    font-family: "Inconsolata";
+    font-size: 18px;
+    color: #feeffe;
 }
 
-.bottom-holder p {
-    padding: 40px;
+.about-text h3 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    font-family: "Inconsolata";
+    font-size: 14px;
+    color: #feeffe;
 }
+
+

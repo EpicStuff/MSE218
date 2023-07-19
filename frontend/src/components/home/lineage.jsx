@@ -27,7 +27,7 @@ export default class Lineage extends React.Component {
                     <div className="connection" style={{backgroundColor: colour_dict[elem.colour]}}></div>
                     <div className="lineage-concept slide" onClick ={() => {
                         this.props.handleDoubleClick(0, elem.uniqueID);
-                        this.props.handleSingleClick(0, elem.uniqueID);
+                        
                       }} >{elem.name}</div>
                 </div> 
                  ) })

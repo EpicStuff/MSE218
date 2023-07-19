@@ -25,7 +25,7 @@ const findAncestors = async (uniqueID) => {
     let ancestors = []
     for (let i = 0; i < 3; i++) {
         ancestors.push({name: current[0].name, colour: current[0].colour, uniqueID: current[0].uniqueID});    // push the current node info to the list
-        if (current[0].parent != "none") {
+        if (current[0].parent != 0) {
             let parent = await findNode(current[0].parent);  // find the parent node of the current node
             current = parent;                                // set current to its parent
         } else {

@@ -20,23 +20,48 @@ const findbyUniqueID = async(x) => {
     }
 }
 
+async function widthCheck(len_dict, max_depth, max_width) {
+    let flag = true
+    for (var i=0; i<=max_depth; i++) {
+        if (len_dict[i] > max_width) {
+            flag = false
+        }
+    }
+    return flag
+}
+
 // recursive function which builds the nested subtree object, with the depth set to the max_depth parameter
-async function recursion(current_parent, depth, max_depth) {
-    if (depth < max_depth) { 
+async function recursion(current_parent, depth, max_depth, max_width, len_dict={0:0, 1:0, 2:0, 3:0, 4:0, 5:0, 6:0, 7:0}) {
+    let flag =  await widthCheck(len_dict, max_depth, max_width)
+    if (depth < max_depth && flag) { 
+        //console.log(current_parent, depth, len_dict)
         let childrenList = []
         const data = await findbyparent(current_parent);
+        
         for (var i=0; i<data.length; i++) {
-            let newnode = {}
-            newnode.name = data[i].name;
-            newnode.colour = data[i].colour;
-            newnode.shape = data[i].shape;
-            newnode.uniqueID = data[i].uniqueID;
-            newnode.children = await recursion(newnode.uniqueID, depth+1, max_depth);
-            childrenList.push(newnode)
+            
+
+                let newnode = {}
+                newnode.name = data[i].name;
+                newnode.colour = data[i].colour;
+                newnode.leaf = data[i].leaf;
+                newnode.shape = data[i].shape;
+                newnode.uniqueID = data[i].uniqueID;
+              
+                
+                len_dict[depth+1] += 1
+                
+                unpack = await recursion(newnode.uniqueID, depth+1, max_depth, max_width, len_dict);
+                newnode.children = unpack[0]
+                len_dict = unpack[1]
+               
+          
+                childrenList.push(newnode)
+            
         }
-        return childrenList
+        return [childrenList, len_dict]
     } else {
-        return []
+        return [[], len_dict]
     }
 }
 
@@ -123,7 +148,7 @@ const generateSubtree = async (uniqueID) => {
     try {
 
         const max_depth = 4;
-        const max_width = 10;
+        const max_width = 7;
 
         const root = await findbyUniqueID(uniqueID);
        
@@ -131,13 +156,16 @@ const generateSubtree = async (uniqueID) => {
             uniqueID: root[0].uniqueID, 
             name: root[0].name, 
             shape: root[0].shape, 
-            colour: root[0].colour, 
+            colour: root[0].colour,
+            leaf: root[0].leaf, 
             children: []
         }
     
-        subtree.children = await recursion(root[0].uniqueID, 0, max_depth);
+        unpack = await recursion(root[0].uniqueID, 0, max_depth, max_width);
+        subtree.children = unpack[0]
+        console.log(unpack[1])
 
-        await trim(subtree, max_depth, max_width);
+        //await trim(subtree, max_depth, max_width);
 
         return (
             subtree

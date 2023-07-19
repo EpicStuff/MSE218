@@ -90,22 +90,13 @@ class TreeContent extends React.Component {
 
                     let top = node.y;
                     let left = node.x;
-                    let colour = node.data.colour;
 
-
+                    let leaf = node.data.leaf;
+            
                     let shape = node.data.shape;
-                    let borderRad;
-                    let borderDash;
-                    if (shape == "set") {
-                        borderRad = "25px";
-                        borderDash = "none";
-                    } else if (shape == "aset") {
-                        borderRad = "25px";
-                        borderDash = "2px dashed #e0aaff";
-                    } else {
-                        borderRad = "25px";
-                        borderDash = "2px dashed #333333";
-                    } 
+                    let borderRad = "20px";
+                    let borderDash = (shape == "r") ? (leaf) ? "2px dotted #6E7287" : "none" : "2px dotted #e0aaff"
+                 
 
                     let depth = Number(node.depth)
                     let fadeClass = null;
@@ -117,13 +108,15 @@ class TreeContent extends React.Component {
                         fadeClass = "fade-in-three";
                     } 
 
+    
+
                     var background_colour = (key != this.props.select) ? "#292929": "#fefae0";
                     var font_colour = (key != this.props.select) ? "#fefae0": "black";
                     var isHidden = (key == this.props.hidden || this.props.hidden == null) ? "block": "none";
                     
                   
                     return (
-                        <foreignObject key={key} x={left-width/2} y={top-height/2} width="110" height="100">
+                        <foreignObject key={key} x={left-width/2} y={top-height/2} width="90" height="100">
                         <div className={fadeClass} >
                             <div className="nodes slide"
                                 style={{
@@ -131,8 +124,8 @@ class TreeContent extends React.Component {
                                     boxShadow: "rgba(0, 0, 0, 0.23) 0px 6px 6px",
                                     color: font_colour,
                                     fontFamily: 'Mukta',
-                                    lineHeight: "15px",
-                                    fontSize: "15px",
+                                    lineHeight: "13px",
+                                    fontSize: "13px",
                                     display: isHidden,
                                     borderRadius: borderRad,
                                     border: borderDash,

@@ -158,14 +158,13 @@ export default class Courses extends React.Component {
       }
 
     render () {  
-        //console.log("render called")
         let tree = this.state.data;
         console.log(tree.uniqueID);
         
-       
         return (
             <div className="main-holder">
                 <div className="column left">
+                <div className='black-box'></div>
                     <div className="content-left">
                         {this.createCourses(cdic)}
                     </div>

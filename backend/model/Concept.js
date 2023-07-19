@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const conceptSchema = new Schema({
     uniqueID: {
-        type: String, 
+        type: Number, 
         required: true,
         unique: true     // note that this only works when there's no problems of duplicates already in the database
     },
@@ -12,32 +12,28 @@ const conceptSchema = new Schema({
         required: true
     },
     parent: {
-        type: String,
-        default: null,
+        type: Number
     },
     description: {
-        type: String,
-        default: "",
+        type: String
     },
     colour: {
-        type: String,
-        default: "black",
+        type: String
     },
     shape: {
-        type: String,
-        default: "box",
+        type: String
     },
     courses: {
-        type: Array,
-        default: [],
+        type: Array
     },    
     related: {
-        type: Array,
-        default: [],
+        type: Array
     },
-    laTex: {
-        type: Boolean,
-        default: false
+    LaTeX: {
+        type: Boolean
+    }, 
+    leaf: {
+        type: Boolean
     }
 })
 

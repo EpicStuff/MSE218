@@ -7,14 +7,13 @@ const Concepts = require('../model/Concept'); // Concepts is the collection
 
 // **** INPUT: no input
 // **** OUTPUT: no return
-const insertNodes = async (nodes) => { 
+const dropDatabase = async () => { 
   try {
-    const treeNode = await Concepts.insertMany(nodes)
-    console.log("successfully added node(s) to database")
+    Concepts.collection.drop();
+    //return await Concepts.deleteMany({});   
   } catch(err) {
     console.log(err.message);
   }
 }
 
-module.exports = insertNodes;
-
+module.exports = dropDatabase;

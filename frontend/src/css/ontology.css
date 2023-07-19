@@ -1,5 +1,13 @@
+/* FIXED SIDEBAR POSITION SO LINKS STAY PUT */
+.vertical-bar {
+    position: fixed;
+    width: 10%;
+    min-width: 120px;
+    height: 100vh;
+    background-color: #0b090a;
+  }
 
-/* this is the container that holds the labels subset, constitution, etc... */
+/* CONTAINER THAT HOLDS RELATION LABELS */
 .labels {
     margin-top: 20px;
     margin-left: 20px;
@@ -9,7 +17,7 @@
     cursor: pointer;
 }
 
-/* The font style for each p, plus padding in between them */
+/* THE FONT STYLING FOR RELATION LABELS */
 .labels p {
     padding: 20px 0 10px 0;
     font-family: 'Josefin Sans';
@@ -19,14 +27,13 @@
     opacity: 0.7;
 }
 
-
-/* holds the two sides so they can go blocked beside eachother */
+/* HOLDS THE DESCRIPTION SIDE AND THE EXAMPLE SIDE SO THEY CAN GO SIDE BY SIDE */
 .relation-description-holder {
     display: table;
     clear: both;
 }
 
-/* this is a holder for the relation description boxes */
+/* HOLDER FOR DESCRIPTION SIDE */
 .content-side {
     position: relative;
     width: 50%;
@@ -35,7 +42,16 @@
     float: left;
 }
 
-/* this is the relation description boxes */
+/* HOLDER FOR EXAMPLE SIDE */
+.example-side {
+    width: 35%;
+    height: 100%;
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+/* THIS IS THE BLACK BOX WITH GREY BORDER */
 .relation-section {
     background-color: #292929;
     padding: 40px;
@@ -65,13 +81,6 @@
 }
 
 
-/* holder for the example trees */
-.example-side {
-    width: 35%;
-    height: 100%;
-    display: inline-block;
-    margin-top: 50px;
-    margin-left: 20px;
-}
+
 
 

@@ -12,11 +12,13 @@ class DefinitionBox extends React.Component {
   parser(content) {                   
     let content_list = content.split("$")
     if (content_list.length > 0) {
-      return content_list.map( (elem) => {
+      return content_list.map( (elem, i) => {
         if (elem[0] == "*") {
-          return <InlineMath key={elem} math={elem.slice(1)}/>
+          return <InlineMath key={i} math={elem.slice(1)}/>
+        } if (elem[0] == "#") {
+          return <BlockMath key={i} math={elem.slice(1)}/>
         } else {
-          return <p  key={elem}>{elem}</p>
+          return <p  key={i}>{elem}</p>
         }
       })
     } else {
@@ -27,19 +29,17 @@ class DefinitionBox extends React.Component {
   render() {
     const laTex = this.props.laTex;
     const content = this.props.content;
-    console.log(laTex)
+    console.log("here: ", laTex)
 
     if (laTex == true) {
       return (
-        <div className="grey-box">
-          <h1>{this.props.title}</h1>
+        <div className="line-height">
           <div className="no-break">{this.parser(content)}</div>
         </div>
       );
     } else {
       return (
-        <div className="grey-box">
-          <h1>{this.props.title}</h1>
+        <div className="">
           <p>{this.props.content}</p>
         </div>
       );

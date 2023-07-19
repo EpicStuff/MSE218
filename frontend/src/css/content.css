@@ -1,7 +1,7 @@
 .nodes {
 	position: relative;
     font-size: 12px;
-    padding: 13px 5px 13px 5px;
+    padding: 10px 5px 10px 5px;
     color: #fefae0;
     text-align: center;
 	animation: mymove 1s ease-in;
@@ -13,9 +13,6 @@
 	from {top: 10px;}
 	to {top: 0px;}
   }
-
-
-
 
 
 .slide:hover,

@@ -1,8 +1,53 @@
 
 
 
-
 const thedata = {
+    "uniqueID": 1,
+    "name": "MSE",
+    "shape": "r",
+    "colour": "g",
+    "children": [
+        {
+            "name": "Physics & Chemistry",
+            "colour": "g",
+            "shape": "r",
+            "uniqueID": 2,
+            "children": [
+                {
+                    "name": "Compositional and Structural Material Science",
+                    "colour": "g",
+                    "shape": "r",
+                    "uniqueID": 4,
+                    "children": [
+                        {
+                            "name": "Structural Properties",
+                            "colour": "g",
+                            "shape": "r",
+                            "uniqueID": 1001,
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Physical Chemistry",
+                    "colour": "g",
+                    "shape": "r",
+                    "uniqueID": 1002,
+                    "children": []
+                }
+            ]
+        },
+        {
+            "name": "Math",
+            "colour": "g",
+            "shape": "r",
+            "uniqueID": 3,
+            "children": []
+        }
+    ]
+}
+
+const thedataaaa = {
     "uniqueID": "function0",
     "name": "function",
     "shape": "set",

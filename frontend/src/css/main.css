@@ -101,8 +101,10 @@ button {
   text-align: center;
   font-family: 'Mukta';
   margin: auto;
-  padding: 5px 0 5px 0;
+  padding: 5px 5px 5px 5px;
   cursor: pointer;
+  font-size: 15px;
+  line-height: 17px;
 }
 
 .lineage-concept:hover,
@@ -240,13 +242,18 @@ button {
 /* SAME FOR ALL THREE BOXES ON THE RIGHT DESCRIPTION SIDEBAR */
 .grey-box {
   background: #141414;
-  font-size: 15px;
+  font-size: 16px;
+  line-height: 20px;
   padding: 20px; 
   color: #fefae0;
   font-family: "Josefin Sans";
   border-radius: 15px;
   text-align: left;
   margin: 15px;
+}
+
+.line-height {
+  line-height: 25px;
 }
 
 /* READS DEFINITION */
@@ -310,6 +317,17 @@ opacity: 0.7;
 /***************** REUSED ON DIFFERENT PAGES ****************/
 /************************************************************/
 
+/* USED IN ABOUT / ONTOLOGY / SEARCH - 4000px TO OVERESTIMATE HEIGHT OF ALL */
+.background {
+  margin-top: 44px;  
+  height: 4000px;
+  width: 100%;
+  background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
+  background-size: 10px 10px;
+  background-color: #e5e5f7;
+  opacity: 0.8;
+}
+
 /* WHITE BACKGROUND USED ON ABOUT / ONTOLOGY / COURSES */
 .intro {
   background-color: #fefae0;
@@ -329,18 +347,35 @@ opacity: 0.7;
   padding: 30px 40px 20px 40px; 
 }
 
-
-
-/* This is the container for all the content on the page. */
-.background {
-  margin-top: 44px;  
-  height: 4000px;
-  width: 100%;
-  background-image: radial-gradient(#8D99AE 0.5px, #4a4e69 0.5px);
-  background-size: 10px 10px;
-  background-color: #e5e5f7;
+/* USED IN EVERYTHING BUT MAIN AND SEARCH - USED FOR MAKING THE SCROLL LOOK BETTER */
+.black-box {
+  width: 10%;
+  min-width: 120px;
+  height: 44px;
+  background-color: #0b090a;
   opacity: 0.8;
+  position: fixed;
+  top: 0;
+  left: 0; 
 }
+
+/* USED IN ABOUT AND ONTOLOGY */
+.left-side-content {
+  width: 10%;
+  height: 100vh;
+  float: left;
+}
+
+/* USED IN ABOUT AND ONTOLOGY */
+.right-side-content {
+  width: 90%;
+  float: left;
+  height: 100vh;
+}
+
+
+
+
 
 
 /* SEARCH */
@@ -355,41 +390,13 @@ opacity: 0.7;
 }
 
 
-.left-side-content {
-  width: 10%;
-  height: 100vh;
-  float: left;
-}
 
-.right-side-content {
-  width: 90%;
-  float: left;
-  height: 100vh;
-}
 
 
 /* This is the bar that sits on the left */
-.vertical-bar {
-  position: fixed;
-  width: 10%;
-  min-width: 120px;
-  height: 100vh;
-  background-color: #0b090a;
-}
 
-.black-background {
-  background-color: black;
-}
+
+
 
 
 /* */
-.black-box {
-  width: 10%;
-  min-width: 120px;
-  height: 44px;
-  background-color: #0b090a;
-  opacity: 0.8;
-  position: fixed;
-  top: 0;
-  left: 0; 
-}

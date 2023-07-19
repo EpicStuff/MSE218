@@ -13,7 +13,7 @@ export default class SearchForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    alert(`The name you entered was: ${this.state.input}`)
+    //alert(`The name you entered was: ${this.state.input}`)
     this.props.handleSearch(this.state.input)
   }
 

@@ -29,7 +29,7 @@ export default class Home extends React.Component {
         description: "",
         courses: [],
         related: [],
-        laTex: false
+        LaTeX: false
       }
     };
   }

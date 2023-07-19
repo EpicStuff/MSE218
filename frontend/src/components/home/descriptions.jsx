@@ -42,11 +42,17 @@ export default class Description extends React.Component {
       }
     }
 
+    createTitle(content, header) {
+      if (content.length > 0) {
+        return <h1>{header}</h1>
+      }
+    }
+
     render () {  
         const description = this.props.nodeInfo.description;
         const courses = this.props.nodeInfo.courses;
         const related = this.props.nodeInfo.related;
-        const laTex = this.props.nodeInfo.laTex;
+        const laTex = this.props.nodeInfo.LaTeX;
         const x = `k_{n+1} = n^2 + k_n^2 - k_{n-1}`
         const y = `adding in a &#120591;`
         const z = 'hey testing this $_t_2$ and another one $_x_2$ etc. Adding a longer one in $_k_{n+1} = n^2 + k_n^2 - k_{n-1}$'
@@ -54,12 +60,17 @@ export default class Description extends React.Component {
     
         return (
             <div>
-              <DefinitionBox title={"Definition"} content={description} laTex={laTex} />
               <div className="grey-box">
-                <p>I will display &#9824;</p>
+                {this.createTitle(description, "Definition")}
+                <DefinitionBox title={"Definition"} content={description} laTex={laTex} />
+              </div>
+              
+              <div className="grey-box">
+                {this.createTitle(related, "Related Concepts")}
                 {this.createRelated(related)}
               </div>
               <div className="grey-box">
+                  {this.createTitle(courses, "Related Concepts")}
                   {this.createCourses(courses)}
               </div>
             </div>
