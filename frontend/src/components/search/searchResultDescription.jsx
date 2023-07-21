@@ -1,23 +1,9 @@
 import React from "react";
 
-import { DefinitionBox, WrapSmallTextBox, RelatedConceptsTextBox } from "./boxes.jsx";
+import { DefinitionBox, WrapSmallTextBox, SearchResultDescriptionConceptBox } from "../home/boxes";
 
 
-const courses_dict = {
-  MAT294: 'MAT294: Calculus and Differential Equations',
-  MSE202: 'MSE202: Thermodynamics',
-  MSE219: 'MSE219: Structure and Characterization of Materials',	
-  MSE244: 'MSE244: Inorganic Materials Chemistry and Processing',
-
-  MSE217: 'MSE217: Diffusion and Kinetics',
-  MSE218: 'MSE218: Phase Transformations',
-  MSE222: 'MSE222: Mechanics of Solid Materials',
-  MSE238: 'MSE238: Engineering Statistics and Numerical Methods',
-  MSE245: 'MSE245: Organic Materials Chemistry and Properties',
-  }
-
-
-export default class Description extends React.Component { 
+export default class SearchResultDescription extends React.Component { 
     constructor(props) {
         super(props);
     }
@@ -58,11 +44,8 @@ export default class Description extends React.Component {
     createRelated(related) {
       //this.props.resetCoursesAndRelated()
       if (related.length > 0) {
-        return related.map( (elem) => {return ( <RelatedConceptsTextBox
-          onClick ={() => {
-            this.props.handleDoubleClick(0, elem.uniqueID);
-            this.props.handleSingleClick(0, elem.uniqueID);
-          }} 
+        return related.map( (elem) => {return ( <SearchResultDescriptionConceptBox
+          uniqueID={elem.uniqueID} 
           key={elem.uniqueID} 
           content={elem.name}
           course={this.findCourseByID(elem.uniqueID)} />) })
@@ -78,8 +61,8 @@ export default class Description extends React.Component {
     }
 
     render () {  
-
-    
+        const name = this.props.nodeInfo.name;
+        const uniqueID = this.props.nodeInfo.uniqueID;
         const description = this.props.nodeInfo.description;
         const courses = this.props.nodeInfo.courses;
         const related = this.props.nodeInfo.related;
@@ -103,6 +86,13 @@ export default class Description extends React.Component {
               <div className="grey-box">
                   {this.createTitle(courses, "Related Courses:")}
                   {this.createCourses(courses)}
+              </div>
+              <div className="grey-box">
+                {this.createTitle(description, "Open in Tree:")}
+                <SearchResultDescriptionConceptBox
+                    uniqueID={uniqueID} 
+                    content={name}
+                    course={this.findCourseByID(uniqueID)} />
               </div>
             </div>
         );

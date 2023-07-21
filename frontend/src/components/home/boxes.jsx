@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Outlet, Link } from "react-router-dom";
 
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
@@ -47,6 +48,21 @@ class DefinitionBox extends React.Component {
   }
 }
 
+class RelatedConceptsTextBox extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="wrap-small-text-box" style={{backgroundColor: this.props.colour}} onClick={this.props.onClick}>
+        <p>{this.props.content}</p>  
+        <p className="small-course-font">{this.props.course}</p>    
+      </div>
+    );
+  }
+}
+
 class WrapSmallTextBox extends React.Component {
   constructor(props) {
     super(props);
@@ -55,11 +71,51 @@ class WrapSmallTextBox extends React.Component {
   render() {
     return (
       <div className="wrap-small-text-box" style={{backgroundColor: this.props.colour}} onClick={this.props.onClick}>
-        <p>{this.props.content}</p>       
+        <p>{this.props.content}</p>  
       </div>
     );
   }
 }
+
+class OverlapConceptBox extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    let uniqueID = this.props.uniqueID;
+    let link = "/index/" + String(uniqueID)
+    //console.log(s)
+    return (
+      <div className="wrap-small-text-box" style={{backgroundColor: this.props.colour}}>
+      <Link to={link} className="unset"><p>{this.props.name}</p></Link> 
+      </div>
+    );
+  }
+}
+
+class SearchResultDescriptionConceptBox extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    let uniqueID = this.props.uniqueID;
+    let link = "/index/" + String(uniqueID)
+    //console.log(s)
+    if (uniqueID) {
+      return (
+      <Link to={link} className="unset">
+      <div className="wrap-small-text-box">
+        <p>{this.props.content}</p>  
+        <p className="small-course-font">{this.props.course}</p>    
+      </div></Link>
+    );
+    }
+  }
+}
+
+
 
 class CourseSmallTextBox extends React.Component {
   constructor(props) {
@@ -69,10 +125,10 @@ class CourseSmallTextBox extends React.Component {
   render() {
     return (
       <div className="course-small-text-box" style={{backgroundColor: this.props.colour}} onClick={this.props.onClick}>
-        <p>{this.props.content}</p>       
+        <p>{this.props.content}</p>      
       </div>
     );
   }
 }
 
-export {DefinitionBox, CourseSmallTextBox, WrapSmallTextBox};
+export {DefinitionBox, CourseSmallTextBox, WrapSmallTextBox, RelatedConceptsTextBox, OverlapConceptBox, SearchResultDescriptionConceptBox};

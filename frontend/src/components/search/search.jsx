@@ -2,7 +2,7 @@ import React from 'react';
 import "../../css/search.css";
 import SearchForm from './searchForm'; 
 import { WrapSmallTextBox } from '../home/boxes';
-import Description from '../home/descriptions';
+import SearchResultDescription from './searchResultDescription';
 //import "../../css/style.css";
 // make a change
 
@@ -17,6 +17,8 @@ export default class Seach extends SearchForm {
                 courses: [],
                 related: [],
                 laTex: false,
+                uniqueID: 0,
+                name: "",
             }
         }
     }
@@ -93,8 +95,9 @@ export default class Seach extends SearchForm {
 
                     <div className="search-column search-right">
                         <div className="inner-content">
-                        <Description 
+                        <SearchResultDescription
                         nodeInfo={this.state.nodeInfo} 
+                        uniqueID={this.state.selectedNodeUniqueID}
                         />
                         </div>
                     </div> 

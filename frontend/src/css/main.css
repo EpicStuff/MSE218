@@ -96,14 +96,14 @@ button {
   width: 110px;
   background-color: #3d3d3d;
   color: #fefae0;
-  border-radius: 50px;
+  border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.23) 0px 6px 6px;
   text-align: center;
   font-family: 'Mukta';
   margin: auto;
   padding: 5px 5px 5px 5px;
   cursor: pointer;
-  font-size: 15px;
+  font-size: small;
   line-height: 17px;
 }
 
@@ -153,6 +153,7 @@ button {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 15px;
+  padding-bottom: 10px;
   min-height: 270px;
   border-radius: 15px;
 }
@@ -237,16 +238,18 @@ button {
 /************************************************************/
 /********************* DESCRIPTION BOXES ********************/
 /************************************************************/
-
+.unset {
+  all: unset;
+}
 
 /* SAME FOR ALL THREE BOXES ON THE RIGHT DESCRIPTION SIDEBAR */
 .grey-box {
   background: #141414;
-  font-size: 16px;
   line-height: 20px;
   padding: 20px; 
   color: #fefae0;
   font-family: "Josefin Sans";
+  font-size: 15px;
   border-radius: 15px;
   text-align: left;
   margin: 15px;
@@ -254,6 +257,15 @@ button {
 
 .line-height {
   line-height: 25px;
+}
+
+.small-course-font {
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 8px;
+  color: #000000;
+  text-align: left;
+  margin-left: 1px;
 }
 
 /* READS DEFINITION */
@@ -273,7 +285,7 @@ display: inline;
   padding: 5px 10px 5px 10px;
   color: #fefae0;
   font-family: 'Mukta';
-  border-radius: 50px;
+  border-radius: 20px;
   text-align: center;
   display: inline-block;
   margin-right: 10px;

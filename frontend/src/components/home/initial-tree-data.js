@@ -47,23 +47,23 @@ const thedata = {
     ]
 }
 
-const thedataaaa = {
-    "uniqueID": "function0",
+const thedata2 = {
+    "uniqueID": 1,
     "name": "function",
-    "shape": "set",
+    "shape": "r",
     "colour": "r",
     "children": [
         {
             "name": "polynomial",
             "colour": "v",
-            "shape": "set",
-            "uniqueID": "polynomial0",
+            "shape": "r",
+            "uniqueID": 2,
             "children": [
                 {
                     "name": "linear function",
                     "colour": "p",
-                    "shape": "set",
-                    "uniqueID": "linfunction0",
+                    "shape": "r",
+                    "uniqueID": 3,
                     "children": []
                 }
             ]
@@ -71,33 +71,33 @@ const thedataaaa = {
         {
             "name": "rational",
             "colour": "g",
-            "shape": "set",
-            "uniqueID": "rational0",
+            "shape": "r",
+            "uniqueID": 4,
             "children": [
                 {
                     "name": "concept A1",
                     "colour": "b",
-                    "shape": "set",
-                    "uniqueID": "concepta1",
+                    "shape": "d",
+                    "uniqueID": 5,
                     "children": [
                         {
                             "name": "Writing a longer Concept to see",
                             "colour": "p",
-                            "shape": "set",
-                            "uniqueID": "conceptb1",
+                            "shape": "r",
+                            "uniqueID": 6,
                             "children": [
                                 {
                                     "name": "concept C1",
                                     "colour": "o",
-                                    "shape": "aset",
-                                    "uniqueID": "conceptc1",
+                                    "shape": "r",
+                                    "uniqueID": 7,
                                     "children": []
                                 },
                                 {
                                     "name": "concept C2",
                                     "colour": "r",
-                                    "shape": "else",
-                                    "uniqueID": "conceptc2",
+                                    "shape": "d",
+                                    "uniqueID": 8,
                                     "children": []
                                 }
                             ]
@@ -106,14 +106,14 @@ const thedataaaa = {
                             "name": "concept B2",
                             "colour": "r",
                             "shape": "set",
-                            "uniqueID": "conceptb2",
+                            "uniqueID": 9,
                             "children": []
                         },
                         {
                             "name": "concept B3",
                             "colour": "o",
-                            "shape": "set",
-                            "uniqueID": "conceptb3",
+                            "shape": "r",
+                            "uniqueID": 10,
                             "children": []
                         }
                     ]
@@ -122,14 +122,14 @@ const thedataaaa = {
                     "name": "concept A2",
                     "colour": "r",
                     "shape": "aset",
-                    "uniqueID": "concepta2",
+                    "uniqueID": 11,
                     "children": []
                 },
                 {
                     "name": "concept A3",
                     "colour": "r",
                     "shape": "set",
-                    "uniqueID": "concepta3",
+                    "uniqueID": 12,
                     "children": []
                 }
             ]

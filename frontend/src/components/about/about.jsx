@@ -32,19 +32,20 @@ export default class About extends React.Component {
                         <div className='relation-section'>
                             <div className='bottom-holder'>
                             <div className='about-text'>
-                            <h1>How to Navigate</h1>
+                            <h1>How to use the platform</h1>
                                     <p>
-                                    ...........
+                                    The home page holds a tree
                                     </p>
                                 
 
                                 <h1>About the Project</h1>
                                     <p>
                                     This website was created as a MSE master's thesis project in 2023. The project was lead by Andrea Mitchell 
-                                    who designed and implemented the site. The project was supervised by Dr. Glenn Hibbard, Chair of the MSE 
-                                    Department. Dr. Hibbard initiated an effort to restructure the MSE curriculum, to create a more cohesive \
-                                    organization to course content, where concepts are linked over multiple courses, as a way to solidify the 
-                                    understadning of difficult concepts. The Knowledge Engine was built to act as a platform for emphasizing 
+                                    who designed and implemented the site, under the supervision of Dr. Glenn Hibbard, Chair of the MSE 
+                                    Department. 
+                                    
+                                    The knowledge to hold a connected database of course content, where concepts are 
+                                    linked over multiple courses, as a way to solidify connections between concepts.The Knowledge Engine was built to act as a platform for emphasizing  
                                     those connections between courses. 
                                     </p>
                                     <h1>Meet the Team</h1>
@@ -59,7 +60,7 @@ export default class About extends React.Component {
                                             <div className="people-description">
                                                 <div className="about-text">
                                                 <h2>Andrea Mitchell</h2>
-                                                <h3>Position: Project Design, Web Developper</h3>
+                                                <h3>Position: Project Design, Web Developer</h3>
                                                 <p>
                                                 Andrea is a graduate student at University of Toronto. She completed her Master's of Applied Science
                                                 in MSE in August 2023. Her research interests are in education, knowledge representation, and ontologies. 
@@ -77,8 +78,9 @@ export default class About extends React.Component {
                                                 <h2>Glenn Hibbard</h2>
                                                 <h3>Position: Project Supervision</h3>
                                                 <p>
-                                                Andrea is a graduate student at University of Toronto. She completed her Master's of Applied Science
-                                                in MSE in August 2023. Her research interests are in education, knowledge representation, and ontologies. 
+                                                Professor Glenn Hibbard is the Chair of the Department of Materials Science & Engineering at U of T. Professor Hibbard initiated 
+                                                an effort to restructure the MSE curriculum, and identify overlaps in knowledge between courses, to create a more unified 
+                                                program for undergraduate students.
                                                 </p>
                                                 </div>
                                             </div>

@@ -3,6 +3,7 @@ import React from 'react';
 import "../../css/courses.css";
 import { CourseSmallTextBox } from "../home/boxes.jsx";
 import { Overlap } from './overlap';
+import andrea from './../../images/andrea-headshot-2.png';
 
 // make a change
 const cdic = {
@@ -46,33 +47,18 @@ id33: 'MSE397H1: Materials Manufacturing and Design II'
 }
 
 
-const c2 = [
-    {
-        uniqueID: 'id1',
-        name:'Engineering Economics and Accounting'
-    },
-    {
-        uniqueID: 'id2',
-        name: 'Mechanical Behaviour of Material'
-    },
-    {
-        uniqueID: 'id3',
-        name: 'Heat and Mass Transfer for Materials Processing'
-    },
-    {
-        uniqueID: 'id4',
-        name: 'Materials Physics'
-    },
-    {
-        uniqueID: 'id5',
-        name: 'Materials Production'
-    },
-    {
-        uniqueID: 'id6',
-        name: 'Materials Manufacturing and Design II'
-    }
-]
+const courses_dict = {
+    MAT294: 'MAT294: Calculus and Differential Equations',
+    MSE202: 'MSE202: Thermodynamics',
+    MSE219: 'MSE219: Structure and Characterization of Materials',	
+    MSE244: 'MSE244: Inorganic Materials Chemistry and Processing',
 
+    MSE217: 'MSE217: Diffusion and Kinetics',
+    MSE218: 'MSE218: Phase Transformations',
+    MSE222: 'MSE222: Mechanics of Solid Materials',
+    MSE238: 'MSE238: Engineering Statistics and Numerical Methods',
+    MSE245: 'MSE245: Organic Materials Chemistry and Properties',
+}
 
 
 export default class Courses extends React.Component { 
@@ -80,7 +66,7 @@ export default class Courses extends React.Component {
         super();
         this.state = {
             data: {}, // honestly no idea what this is......
-            selected: [],
+            selected: [],  // this is a list of all the courses that the user currently has selected
             concepts: []
         }
     }
@@ -131,7 +117,9 @@ export default class Courses extends React.Component {
         }
     }
 
+    // not sure what I was thinking here???
     con() {
+        this.setState({ concepts: [] });
         return this.fetchOverlap(this.state.selected)
     }
 
@@ -156,7 +144,8 @@ export default class Courses extends React.Component {
                 //return this.generateConcepts(res.concepts);
             })
       }
-
+      
+    // render function
     render () {  
         let tree = this.state.data;
         console.log(tree.uniqueID);
@@ -166,7 +155,7 @@ export default class Courses extends React.Component {
                 <div className="column left">
                 <div className='black-box'></div>
                     <div className="content-left">
-                        {this.createCourses(cdic)}
+                        {this.createCourses(courses_dict)}
                     </div>
                 </div>
     
@@ -188,26 +177,3 @@ export default class Courses extends React.Component {
     }
 }
 
-
-/*
-
-  <div className='black-box-long'></div>
-                <div className='vertical-bar-long'>
-                    <div className='holder'>
-                        {this.createCourses(cdic)}
-                    </div>
-                </div>
-                <div className='intro2'>
-                    <h1>Course Overlap</h1>
-                    <p>See a list of MSE courses. Select as many course codes, and see the overlap in content between them.</p>
-                    <button onClick={() => {this.con()}}>chuebeu</button>
-                    
-                    <Overlap conceptArray={this.state.concepts}/>
-                    
-                </div>
-
-                <div className="position-courses">
-                    <Overlap conceptArray={this.state.concepts}/>
-                </div>
-
-*/

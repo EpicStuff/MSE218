@@ -2,7 +2,7 @@
 import React from "react";
 import restartAnimation from "../utilities/restartAnimation";
 import init from "../utilities/split.js";
-import { thedata } from "./initial-tree-data";
+//import { thedata } from "./initial-tree-data";
 import TreeContent from "./content";
 import Description from "./descriptions";
 import Lineage from "./lineage";
@@ -12,7 +12,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowsLeftRightToLine, faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { WrapSmallTextBox } from "./boxes";
 
+import { useParams } from "react-router-dom";
 
+/*
+const userparams = () => {
+  const params = useParams();
+}
+*/
 export default class Home extends React.Component { 
   constructor() {
     super();
@@ -21,21 +27,45 @@ export default class Home extends React.Component {
       hideRight: false,  // hide the right sidebar starts off as false, and gets switched to true when it is hidden
       hidden: null,      // IF (hidden == NULL) => { nodes are displayed block } ELSE => { hidden is set to key of node which remains on visible }
       select: 0,         // the KEY associated with the currently selected node. Defaults to the top one (0)
-      currentSelected: thedata.uniqueID,
+      currentSelected: 0,
       ancestors: [],
       previousData: [],
-      data: thedata,     // this holds the nested tree structure with the current root node on top
+      data: {},     // this holds the nested tree structure with the current root node on top
       nodeInfo: {        // uniqueID holds the information for the sidebar of a the selected uniqueID
         description: "",
         courses: [],
         related: [],
-        LaTeX: false
+        LaTeX: false,
+        uniqueID: 0,
+        name: "",
       }
     };
   }
 
+  setTree(treeData) {
+    this.setState({data: treeData})
+    this.setState({currentSelected: treeData.uniqueID})
+  }
+
+  // i dont use this ...............
+  resetCoursesAndRelated() {
+    this.setState({nodeInfo: {     
+                      description: "",
+                      courses: [],
+                      related: [],
+                      LaTeX: false,
+                      uniqueID: 0,
+                      name: "",
+    }})
+  }
+
 
   componentDidMount() {
+    console.log("HEROEE+E", this.props.uniqueID)
+    this.fetchByID(this.props.uniqueID) // fetches tree
+    this.fetchLineage(this.props.uniqueID)  // fetches lineage
+    this.fetchNodeByID(this.props.uniqueID)  // fetches node
+    //this.setTree(this.props.treeData);
     init();
   }
 
@@ -203,13 +233,14 @@ export default class Home extends React.Component {
   }
 
 
+
+
   render () {  
     let btn_class = this.state.black ? "blackButton" : "whiteButton";  
     let right_div_class = this.state.hideRight ? "dont-show" : "initial-right-width";  
     let resizer = this.state.hideRight ? "dont-show" : "resizer"; 
 
-
-
+    
     return (   
       <div className="main-container">
         <div className="container" id="body">  
@@ -281,6 +312,7 @@ export default class Home extends React.Component {
             <div style={{width:"100%"}}>
               <Description 
                   nodeInfo={this.state.nodeInfo} 
+                  resetCoursesAndRelated={this.resetCoursesAndRelated.bind(this)}
                   changeUniqueID={this.changeUniqueID.bind(this)}
                   handleDoubleClick={this.handleDoubleClick.bind(this)}
                   handleSingleClick={this.handleSingleClick.bind(this)}/>

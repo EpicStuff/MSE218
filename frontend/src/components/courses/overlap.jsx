@@ -1,5 +1,5 @@
 import React from "react";
-import { WrapSmallTextBox } from "../home/boxes";
+import { OverlapConceptBox } from "../home/boxes";
 
 
 class Overlap extends React.Component {
@@ -10,7 +10,14 @@ class Overlap extends React.Component {
     // the input is an array of courses which need to be displayed
     generateConcepts(conceptArray) {
         if (conceptArray.length > 0) {
-            return conceptArray.map( (elem) => {return ( <WrapSmallTextBox key={elem} content={elem} colour={'#292929'} />) })
+            return conceptArray.map( (elem) => {
+                return ( <OverlapConceptBox 
+                            key={elem.uniqueID} 
+                            name={elem.name} 
+                            uniqueID={elem.uniqueID} 
+                            colour={'#292929'} 
+                />) 
+            })
         } else {
             return []
         }

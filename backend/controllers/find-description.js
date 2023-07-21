@@ -28,12 +28,16 @@ const findDescription = async (uniqueID) => {
     const courses = node[0].courses;
     const related = node[0].related;
     const LaTeX = node[0].LaTeX;
+    const name = node[0].name;
+    const id = node[0].uniqueID;
     
     const results = {
         description: description,
         courses: courses,
         related: related,
-        LaTeX: LaTeX
+        LaTeX: LaTeX,
+        name: name,
+        uniqueID: id
     };
     
     return (

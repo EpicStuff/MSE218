@@ -25,7 +25,10 @@ const findConceptsbyCourses = async (courseIDs) => {
 
     var concepts = []
     for (let i = 0; i < nodes.length; i++) {
-        concepts.push(nodes[i].name);
+        concepts.push({
+            name: nodes[i].name,
+            uniqueID: nodes[i].uniqueID
+        });
     }
 
     const to_return = {
