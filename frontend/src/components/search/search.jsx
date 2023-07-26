@@ -82,10 +82,36 @@ export default class Seach extends SearchForm {
        
         return (
             <div className='background'>
-              
-                <SearchForm handleSearch={this.handleSearch.bind(this)}/>
-              
+            <SearchForm handleSearch={this.handleSearch.bind(this)}/>
+                
+            <div className="search-content">
+            <div className="search-column search-left">
+               <div className="inner-content">
+                   {this.createResults()}
+               </div>
+           </div>
 
+           <div className="search-column search-right">
+               <div className="inner-content">
+               <SearchResultDescription
+               nodeInfo={this.state.nodeInfo} 
+               uniqueID={this.state.selectedNodeUniqueID}
+               />
+               </div>
+           </div> 
+          
+       </div>
+
+
+                
+            </div>
+        );
+    }
+}
+
+/*
+<SearchForm handleSearch={this.handleSearch.bind(this)}/>
+              
                 <div className="search-content">
                      <div className="search-column search-left">
                         <div className="inner-content">
@@ -104,24 +130,5 @@ export default class Seach extends SearchForm {
                    
                 </div>
 
-
-                
-            </div>
-        );
-    }
-}
-
-/*
- <div className="column search-left">
-                        <div className="inner-content">
-                            {this.state.keyword}
-                        </div>
-                    </div>
-
-                    <div className="column search-right">
-                        <div className="inner-content">
-                            Right
-                        </div>
-                    </div>           
 
 */

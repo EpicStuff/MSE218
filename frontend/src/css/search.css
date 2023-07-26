@@ -38,13 +38,13 @@
     height: 44px;
     width: 100%;
     padding-right: 0px;
-    margin-left: 25%;
     padding-top: 30px;
 }
 
 
 input {
      width: 50%;
+     margin-left: 25%;
      height: 100%;
      border-radius: 50px;
      border: 0px solid white;

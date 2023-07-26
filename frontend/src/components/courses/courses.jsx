@@ -3,7 +3,6 @@ import React from 'react';
 import "../../css/courses.css";
 import { CourseSmallTextBox } from "../home/boxes.jsx";
 import { Overlap } from './overlap';
-import andrea from './../../images/andrea-headshot-2.png';
 
 // make a change
 const cdic = {

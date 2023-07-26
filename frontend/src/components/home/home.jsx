@@ -257,12 +257,13 @@ export default class Home extends React.Component {
                 <div className="side-holder">
                   <div className="head-legend"> Legend </div>
                     <div className="legend-holder">
-                      <div className="legend top" style={{backgroundColor: "#f79d65"}}>Subset</div>
-                      <div className="legend" style={{backgroundColor: "#c77dff"}}>Characterize</div>
-                      <div className="legend" style={{backgroundColor: "#99d98c"}}>Subtopic</div>
-                      <div className="legend" style={{backgroundColor: "#ff7096"}}>Derive</div>
-                      <div className="legend" style={{backgroundColor: "#00bbf9"}}>Theorem</div>
-                      <div className="legend" style={{backgroundColor: "#ef233c"}}>Constitution</div>                          
+                      <div className="legend top" style={{backgroundColor: "#f79d65"}}>type of</div>
+                      <div className="legend" style={{backgroundColor: "#c77dff"}}>characterize</div>
+                      <div className="legend" style={{backgroundColor: "#99d98c"}}>subtopic</div>
+                      <div className="legend" style={{backgroundColor: "#ff7096"}}>derive</div>
+                      <div className="legend" style={{backgroundColor: "#00bbf9"}}>theorem</div>
+                      <div className="legend" style={{backgroundColor: "#ef233c"}}>part of</div> 
+                      <div className="legend" style={{backgroundColor: "#ef234c"}}>is</div>                     
                     </div>
                 </div>  
                 <div className="side-holder">

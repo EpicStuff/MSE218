@@ -10,7 +10,9 @@ const colour_dict = {
     "v": "#c77dff", // characterize (purple)
     "r": "#ef233c", // constitution (red)
     "o": "#f79d65", // subset (orange)
-    "p": "#ff7096"  // derived (pink)
+    "p": "#ff7096" , // derived (pink)
+    "i": "#ef234c", // constitution (red)
+
 }
 
 

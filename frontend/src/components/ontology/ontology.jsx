@@ -52,7 +52,7 @@ export default class Ontology extends React.Component {
                     <div className='relation-description-holder'>
                         <div className='content-side'>  
                             <div className='relation-section' id='subset'>
-                                <h1 style={{color: "#f79d65"}}>Subset</h1>
+                                <h1 style={{color: "#f79d65"}}>Subset (type of)</h1>
                                 <p>subset(X, Y) := Y is a subset of X</p>
                                 <ul>
                                     <li>Y is a type of X</li>
@@ -81,7 +81,7 @@ export default class Ontology extends React.Component {
                                 
                             </div>
                             <div className='relation-section' id='constitution'>
-                                <h1 style={{color: "#ef233c"}}>Constitution</h1>
+                                <h1 style={{color: "#ef233c"}}>Constitution (part of)</h1>
                                 <p>constitution(X, Y) := X constitutes of Y</p>
                                 <ul>
                                     <li>Y is made of X</li>
