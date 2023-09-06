@@ -97,9 +97,38 @@ class TreeContent extends React.Component {
             
                     let shape = node.data.shape;
                     let borderRad = "20px";
-                    let borderDash = (shape == "r") ? (leaf) ? "2px dotted #6E7287" : "none" : "2px dotted #e0aaff"
-                 
 
+                    var borderDash;
+                    if (leaf) {
+                        if (shape == "r") {
+                            borderDash = "2px dotted #080808";
+                        } else {
+                            borderDash = "2px dotted #c77dff";
+                        }
+                    } else {
+                        if (shape == "r") {
+                            borderDash = "none";
+                        } else {
+                            borderDash = "2px dotted #c77dff";
+                        }
+                    }
+                        
+                    /*
+                    #B0B3BF
+                    #DCADFF
+            
+                    if (leaf && shape != "r") {
+                        borderDash = "2px dotted red";
+                    } else if (leaf && shape != "r") {
+                        borderDash = "2px dotted blue";
+                    } else if (!leaf && shape == "r") {
+                        borderDash = "none";
+                    } else {
+                        borderDash = "2px dotted white";
+                    }
+                    // #8F92A3  #6E7287
+                    */
+                 
                     let depth = Number(node.depth)
                     let fadeClass = null;
                     if (depth == 1 || depth == 0) {
@@ -127,7 +156,7 @@ class TreeContent extends React.Component {
                                     color: font_colour,
                                     fontFamily: 'Mukta',
                                     lineHeight: "13px",
-                                    fontSize: "13px",
+                                    fontSize: "11.5px",
                                     display: isHidden,
                                     borderRadius: borderRad,
                                     border: borderDash,

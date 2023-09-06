@@ -5,7 +5,7 @@ uniqueID,name,parent,shape,colour,definition,courses,concepts
 4,Compositional and Structural Material Science,2,,g,"Compositional and Structural Materials Science deals with the study of how various arrangements of atoms and molecules within materials characterize techniques, theories and models relating to the application of such materials into the engineering world.","MSE219, MSE218, MSE217",
 1001,Structural Properties,4,,g,The properties of a system that express the unique role of each part within the overall structure of the system.,MSE222,
 1002,Physical Chemistry,2,,g,"A branch of chemistry that is concerned with applying the techniques, theories and laws of physics to chemical systems for analysis.","MSE245, MSE244",
-5,Statistics and Numerical Methods,3,,g,-,MSE238,
+5,Statistics and Numerical Methods: MSE238,3,,g,-,MSE238,
 6,Statistics,5,,g,"Statistics concerns the collection, organization, analysis, interpretation, and presentation of data.",MSE238,"18, 35"
 7,Statistical Data,6,,g,-,MSE238,1405
 8,Samples and Populations,7,,g,-,MSE238,
@@ -25,7 +25,7 @@ uniqueID,name,parent,shape,colour,definition,courses,concepts
 22,Method of Least Squares,21,,o,"The method of least squares is a way to estimate the parameters $*\hat{\beta_0}$ and $*\hat{\beta_1}$ for simple linear regression. The approach choses $*\hat{\beta_0}$ and $*\hat{\beta_1}$  that minimize the RSS by taking the partial derivative and setting it equal to zero.  $#\hat{\beta}_1 = \frac{{\sum_{i=1}^{n} (x_i - \bar{x})(y_i - \bar{y})}}{{\sum_{i=1}^{n} (x_i - \bar{x})^2}}$
 $#\hat{\beta}_0 = \bar{y} - \hat{\beta}_1 \bar{x}$","MSE238, MAT294","19, 332, 31, 23, 26"
 23,Least Squares Estimate,22,,p,The least squares estimate is:  $#\hat{y} = \hat{\beta_0} + \hat{\beta_1} * x$ ,MSE238,19
-24,Residual Error,23,,p,The residual error for each $#y_i$ is: $*e_i = y_i - \hat{y}$.,MSE238,19
+24,Residual Error,23,,p,The residual error for each $*y_i$ is: $*e_i = y_i - \hat{y}$.,MSE238,19
 25,Goodness of Fit for Least Squares Estimate,23,d,v,There are several measures of how good the estimate was. ,MSE238,19
 26,Sum of Squares,25,,o,-,MSE238,19
 27,Coefficient of Determination,25,,o,Denoted by $*R^2$. The coefficient of determination uses the different calculations of sums of squares together to provide one measure of goodness of fit. The formula is: $#R^2 = \frac{{\text{{SSR}}}}{{\text{{SST}}}} = 1 - \frac{{\text{{SSE}}}}{{\text{{SST}}}}$,MSE238,"19, 26, 28, 29, 30"
@@ -189,7 +189,7 @@ accurate than numerical differentiation. The integration integral is transformed
 170,Simpson's Rule,158,,b,"The integral of a quadratic function can be approximated by $#\frac{h}{3} \biggl( f(x_i) + 4f(x_{i+1}) + f(x_{i+2}) \biggl)$ where $*x_i$, $*x_{i+1}$, and $*x_{i+2}$ are the points within the subinterval.",MSE238,"154, 144"
 171,Experiment,6,,g,A data collection procedure that occurs in a controlled conditions to identify relationships and trends between variables.,MSE238,"7, 8, 9, 11, 172"
 172,Random Experiment,171,,o,An experiment that produces different outcomes even if repeated in the same manner is said to be called a Random Experiment.,MSE238,171
-200,Calculus,3,,g,-,MAT294,
+200,Calculus: MAT294,3,,g,-,MAT294,
 201,Mathematical Structures Used in Calculus,200,,g,-,MAT294,
 202,Limit,200,,g,"The limit is used to describe the behaviour of a function as the independent variable approaches a particular value, or as it reaches positive or negative infinity. ",MAT294,"204, 216"
 203,Vector Field,201,,o,"A vector field assigns a vector to each point in a given space or region. In $*\mathbb{R}^2$, it is a function $*F$, where $*F$ assigns a vector $*F(x,y)$ to each point $*(x,y)$ in its domain. ",MAT294,"206, 219, 221, 224, 227, 230, 234, 235, 236, 237"
@@ -447,7 +447,7 @@ In this equation, $*g \circ f$ represents the composition of functions $*f$ and 
 435,Higher Order  ,432,,o,It refers to a mathematical equation that involves derivatives or powers of variables beyond the first or second order.,"MAT294, MSE238",389
 436,Secant line,437,,g,"A secant line to a function $*f(x)$ at a sample point $* a $ is a line through the point $*(a,f(a))$ and another point on the function; $* (b,f(b)) $ the slope of the secant line is given by $*\frac{f(b)− f(a)}/ b−a$.","MAT294, MSE238","205, 204"
 437,Tangent line,212,,g,"A tangent line is assigned to a given point on the function, and it is the straight line that just touches the curve at that point. It describes the slope of the function at that given point. Leibniz defined the tangent as the line through a pair of infinitely close points on the curve. The line through two points is called a secant line. ","MAT294, MSE238","205, 204"
-500,Mechanics,1001,,g,"Area of mathematics and physics concerned with the relationships between force, matter and motion among physical objects. ",MSE222,1404
+500,Mechanics: MSE222,1001,,g,"Area of mathematics and physics concerned with the relationships between force, matter and motion among physical objects. ",MSE222,1404
 501,Free Body Diagram,500,,g,Simplified representation of an object where only the relevant forces are drawn. ,MSE222,"508, 512, 513, 522, 526, 528, 531, 534, 538, 566, 612"
 502,Mohr's Circle,501,,g,Graphical representation used to analyze stress and strain conditions of materials that are subjected by external forces. ,MSE222,"503, 504, 505, 591, 599"
 503,Stress and Strain Transformation,502,,p,A process of converting stress and strain values to analyze material behaviour under different conditions.,MSE222,"502, 591, 599"
@@ -585,7 +585,7 @@ In this equation, $*g \circ f$ represents the composition of functions $*f$ and 
 636,Stable Equilibrium,635,,p,When an object returns to its original state after being disturbed. ,MSE222,635
 637,Unstable Equilibrium,635,,p,When an object does not return to its original state after being disturbed. ,MSE222,635
 638,Neutral Equilibrium,635,,p,When an object has a balanced state remaining static without external forces. ,MSE222,635
-800,Structures and Characterizations of Materials,4,,g,-,"MSE219, MSE218, MSE217",
+800,Structures and Characterizations of Materials: MSE219,4,,g,-,"MSE219, MSE218, MSE217",
 801,Crystal Structure,800,,g,"A description of the ordered arrangement of atoms, ions or molecules in a crystalline material. ","MSE219, MSE244, MSE245, MSE217, MSE218","2059, 2060, 1050, 1428, 1707, 1050, 804, 803"
 802,Symmetry,804,,g,An description of the degree to which motifs are repeated systematically in space to produce structures that exhibit specific and predictable positions. ,"MSE218, MSE219","804, 1491, 1492, 816, 817"
 803,Motif,801,,g,A set of atoms arranged in a specific configuration within a lattice structure. Motifs are located on lattice points which allow for the periodic repetition of the arrangement of atoms throughout a lattice structure. ,"MSE218, MSE219","1050, 804, 801"
@@ -662,7 +662,7 @@ In this equation, $*g \circ f$ represents the composition of functions $*f$ and 
 874,X-ray Photoelectron Spectroscopy,863,,o,A surface-sensitive quantitative spectroscopic technique based on the photoelectric effect that is able to identify the elements features like chemical state.,"MSE218, MSE219","863, 1402"
 875,Auger Electron Spectroscopy,863,,o,A surface analysis technique based on Auger effect is able to analyze the energetic electrons emitted from the excited state.,"MSE218, MSE219","863, 1402"
 876,Secondary Ion Mass Spectrometry,863,,o,A surface analysis technique discovers materials surface characterization like chemical state by leasing focused primary ion beam and collecting ejected secondary ions.,"MSE218, MSE219","863, 1402"
-1049,Inorganic Chemistry,1002,,g,A branch of chemistry that pertains to all substances that do not contain carbon hydrogen bonds. ,MSE244,
+1049,Inorganic Chemistry: MSE244,1002,,g,A branch of chemistry that pertains to all substances that do not contain carbon hydrogen bonds. ,MSE244,
 1050,Atom,1051,,r,The basic unit of a chemical element.,"MSE245, MSE244, MSE219, MSE217, MSE218","1910, 1917, 1956, 1427, 1458, 1424, 1425, 1051, 1428, 1069, 801, 1605, 1606, 1072"
 1051,Elements,1052,,r,Chemical substance that cannot be broken into other substances by chemical means.,"MSE245, MSE244, MSE219, MSE217, MSE218","1050, 1060, 1459, 1406, 1600, 867, 1053"
 1052,Periodic Table,1049,,g,Framework for the study of descriptive chemistry organizing all chemical elements in a table in order of increasing atomic number.,"MSE245, MSE244","1074, 1077, 1076"
@@ -687,12 +687,12 @@ In this equation, $*g \circ f$ represents the composition of functions $*f$ and 
 1071,Plum Pudding,1069,,o,A model that depicts the electrons surrounded by a volume of positive charge.,"MSE245, MSE244","1056, 1069, 1080"
 1072,Dalton,1069,,o,Atomic theory that states all matter is composed of atoms which are indivisible.,"MSE245, MSE244","1069, 1050"
 1073,Schrodinger,1069,,o,A model that formulated a wave equation that accurately calculated the energy levels of electrons in atoms.,"MSE245, MSE244","1069, 1098"
-1074,Atomic Number,1050,,v,The number of protons in the nucleus of the atom.,"MSE245, MSE244, MSE219, MSE217, MSE218","1052, 1077, 1076, 1600, 1459, 1079"
-1075,Atomic Mass,1050,,v,The mass of an atom equivalent to the number of protons and neutrons in an atom.,"MSE245, MSE244, MSE219, MSE217, MSE218","1077, 1078, 1079, 1050, 1458"
+1074,Atomic Number,1050,d,v,The number of protons in the nucleus of the atom.,"MSE245, MSE244, MSE219, MSE217, MSE218","1052, 1077, 1076, 1600, 1459, 1079"
+1075,Atomic Mass,1050,d,v,The mass of an atom equivalent to the number of protons and neutrons in an atom.,"MSE245, MSE244, MSE219, MSE217, MSE218","1077, 1078, 1079, 1050, 1458"
 1076,Nucleus,1050,,r,A region consisting of protons and neutrons at the center of an atom.,"MSE245, MSE244, MSE219, MSE217, MSE218","1052, 1058, 1074, 1050, 1459, 1086"
 1077,Protons,1076,,r,A positively charged particle of matter found in the nucleus of an atom.,"MSE245, MSE244, MSE219, MSE217, MSE218","1077, 1052, 1074, 1075, 1050, 1076, 1458, 1139, 1077, 1131, 1132"
 1078,Neutrons,1076,,r,An uncharged elementary particle in the nucleus of an atom.,"MSE245, MSE244","1075, 1050, 1076, 1458"
-1079,Isotope,1050,,v,Species that have the same atomic number but different mass numbers.,"MSE245, MSE244, MSE217, MSE218","1075, 1600, 1074"
+1079,Isotope,1050,d,v,Species that have the same atomic number but different mass numbers.,"MSE245, MSE244, MSE217, MSE218","1075, 1600, 1074"
 1080,Electron,1050,,r,A particle with a negative charge that is found in an atom.,"MSE245, MSE244, MSE219, MSE217, MSE218","1928, 1962, 1964, 1054, 1055, 1056, 1057, 1076, 1070, 1071, 1458, 1088, 1135, 1118, 1119"
 1081,Chemical State,1050,d,v,"The arrangement of atoms, ions, and molecules in a substance, as well as physical state. (liquid, solid, gas or plasma)","MSE245, MSE244, MSE218","1442, 1444, 1144"
 1082,Neutral,1081,,o,"A system that has an overall net charge of zero, indicating a balance of positive and negative charges. ","MSE245, MSE244, MSE219, MSE217, MSE218","1757, 1604, 1093"
@@ -711,10 +711,10 @@ In this equation, $*g \circ f$ represents the composition of functions $*f$ and 
 1095,Angles,1096,d,v,"The geometric measure between bonds that connect atoms in a molecule, which are determined by the arrangement of electron pairs around the central atom. ","MSE245, MSE244","1080, 1096"
 1096,VSEPR Geometries,1090,,r,It considers the repulsion between electron pairs around the central atom and provides geometrical arrangements. ,"MSE245, MSE244","1445, 1120, 1121, 1122, 1123, 1124, 1099"
 1097,Quantum Number,1051,,v,It refers to the position and energy of the electron in an atom.,"MSE245, MSE244","1445, 1080, 1050"
-1098,Principle (n),1097,,r,The size of the orbital and the energy level an electron is placed in.,"MSE245, MSE244","1073, 1097"
-1099,Angular Momentum (l),1097,,r,It describes the shape of the orbital.,"MSE245, MSE244","1096, 1097"
-1100,Magnetic Quantum Number (m),1097,,r,It describes the energy levels in a subshell.,"MSE245, MSE244","1088, 1097"
-1101,Spin (S),1097,,r,It describes the spin on the electron.,"MSE245, MSE244","1080, 1097"
+1098,Principle (n),1097,d,o,The size of the orbital and the energy level an electron is placed in.,"MSE245, MSE244","1073, 1097"
+1099,Angular Momentum (l),1097,d,o,It describes the shape of the orbital.,"MSE245, MSE244","1096, 1097"
+1100,Magnetic Quantum Number (m),1097,d,o,It describes the energy levels in a subshell.,"MSE245, MSE244","1088, 1097"
+1101,Spin (S),1097,d,o,It describes the spin on the electron.,"MSE245, MSE244","1080, 1097"
 1102,Heisenberg Principle,1087,,o,"It states that there is a limit to the precision with which certain pairs of physical properties, such as position and momentum, can be simultaneously known or measured.",,1087
 1103,Pauli Exclusion Principle,1087,,o,It states that no two electrons in the same atom can have identical values for all four of their quantum numbers.,"MSE245, MSE244","1087, 1097, 1080"
 1104,Aufbau Principle,1087,,o,Electrons fill lower-energy atomic orbitals before filling higher-energy ones.,"MSE245, MSE244","1087, 1106"
@@ -758,7 +758,7 @@ In this equation, $*g \circ f$ represents the composition of functions $*f$ and 
 1142,Equilibrium Constants of Acid,1141,,o,A measure of strength of an acid in terms of its ability to donate protons in a chemical reaction.,"MSE245, MSE244","1141, 1129"
 1143,Equilibrium Constants of Base,1141,,o,A measure of the strength of a vase on terms of its ability to accept protons in a chemical reaction.,"MSE245, MSE244","1141, 1127"
 1144,Equilibrium Constants of Water,1141,,o,It refers to the state of equilibrium that exists in our water. ,"MSE245, MSE244","1141, 1081, 1134"
-1200,Thermodynamics,2,,g,,MSE202,
+1200,Thermodynamics: MSE202,2,,g,,MSE202,
 1201,0th Law of Thermodynamics,1205,,o,"If A is in thermal equilibrium with B, and B is in thermal equilibriium with C, then C will be in thermal equilibrium with A.  (Temperature is defined)","MSE217, MSE218, MSE202","1205, 1620, 1471, 1282"
 1202,1st Law of Thermodynamics,1205,,o,"Energy is a property of the universe, which cannot change no matter what processes occur. (Energy is conserved)","MSE217, MSE218, MSE202","1205, 1280, 1278"
 1203,2nd Law of Thermodynamics,1205,,o,"Entropy is a property of the universe, which always changes in the same direction no matter what processed occur.  (Entropy is created)","MSE217, MSE218, MSE202","1205, 1228, 1278, 1288"
@@ -864,7 +864,7 @@ In this equation, $*g \circ f$ represents the composition of functions $*f$ and 
 1303,Isothermal,1299,,o,"In a thermodynamic reaction, temperature remains constant. ","MSE244, MSE245, MSE202","1299, 1282"
 1304,Adiabatic,1299,,o,"In a thermodynamic reaction, heat energy remains constant. ","MSE244, MSE245, MSE202","1299, 1266, 1267, 1291, 1280"
 1305,Isometric,1299,,o,"In a thermodynamic reaction, volume remains constant. ","MSE244, MSE245, MSE202","1299, 1289"
-1400,Phase Transformations System,4,,g,,MSE218,
+1400,Phase Transformations System: MSE218,4,,g,,MSE218,
 1401,Investigative Techniques of Measuring Phase Transformations,1400,,g,Analytical methods used to quantify and study changes in the phase or state of a material as it undergoes a transition from one phase to another. ,"MSE218, MSE202","1402, 1403, 1404, 1405, 1207"
 1402,Experimental Techniques (First Paradigm),1401,,o,"An introduction and hypothesis section outline the experimenter's context and expectations for the process. The experiment then has a procedure, a result, and a conclusion section for which the experimenter must reference the hypothesis to see if they were correct. ",MSE218,"1401, 1406, 1407, 1408, 1409, 1410, 1411, 1412, 1413, 862"
 1403,Analytical Analysis (Second Paradigm),1401,,o,"Defining phase transformations through an analytical lens involves the systematic approach to defining the phase changes that occur in a material as it moves from one phase to another. In doing so, researchers may employ the use of various techniques to fully examine a transformation in terms of the structural, physical, chemical phenomena. ",MSE219,"1401, 862"
@@ -997,7 +997,7 @@ In this equation, $*g \circ f$ represents the composition of functions $*f$ and 
 1626,Fick's Laws,1627,,b,Two laws that describe diffusion of a substance through a medium.,"MSE217, MSE218, MSE238","1627, 1611, 1603, 1687, 1608"
 1627,Diffusion,1629,,o,"The process by which molecules, particles, or heat move from an area of higher concentration to an area of lower concentration. (Mass transport by atomic mass)","MSE217, MSE202, MSE218, MSE244, MSE245","1601, 1602, 1698, 1690, 1691, 1692, 1693, 1694, 1695, 1672, 1669, 1670, 1608, 1424, 1425"
 1628,Kinetics,1629,,o,"The study of the rate of reactions, and the factors that influence the speed of chemical reactions.","MSE217, MSE202, MSE218, MSE244, MSE245","1611, 1732, 1623, 1629"
-1629,Diffusion and Kinetics,4,,g,-,"MSE217, MSE202, MSE218, MSE244, MSE245","4, 1627, 1628"
+1629,Diffusion and Kinetics: MSE217,4,,g,-,"MSE217, MSE202, MSE218, MSE244, MSE245","4, 1627, 1628"
 1630,Solvent,1623,,o,A substance that can dissolve other substances to form a uniform mixture called solution.,"MSE217, MSE244, MSE245","1623, 1732"
 1631,Product,1796,,o,Substances or compounds that are formed as a result of a chemical reaction.,MSE217,"1660, 1616, 1617, 1796, 1646, 1651"
 1632,Reaction Order,1797,d,o,The number that indicates the degree to which the reaction rate depends on the concentration of each reactants.,"MSE217, MSE218","1797, 1611, 1650, 1635, 1637, 1638, 1639"
@@ -1155,7 +1155,7 @@ In this equation, $*g \circ f$ represents the composition of functions $*f$ and 
 1784,Phase,1618,d,v,The form of matter with specific physical and chemical properties. ,"MSE217, MSE218, MSE202","1444, 1723, 1633, 1207, 1208"
 1785,Reversibility of Reactions,1797,d,o,The ability for the system to return or not to its original state.,"MSE217, MSE218, MSE244, MSE202","1723, 1618, 1617, 1648, 1649, 1786, 1787"
 1786,Reversible,1785,,o,A process or reaction that can proceed in both forward or backward directions without any net change in the system.,"MSE217, MSE218, MSE244, MSE202",1785
-1787,Irreversible,1785,,,A process or reaction that can only occur in one direction and cannot be reversed to restore the original state of the system.,"MSE217, MSE218, MSE244, MSE202",1785
+1787,Irreversible,1785,,o,A process or reaction that can only occur in one direction and cannot be reversed to restore the original state of the system.,"MSE217, MSE218, MSE244, MSE202",1785
 1788,Gas Layer,1750,,o,"A thin layer of gas that forms on the surface of the solid, influencing mass transfer and surface interactions.",MSE217,1750
 1789,Shrinking Sphere,1744,,o,A model describing the gradual reduction in size of a particle due to reaction.,MSE217,"1792, 1791"
 1790,Constant Size Particle,1744,,o,A particle that maintains a consistent and unchanging size and shape.,MSE217,
@@ -1168,7 +1168,7 @@ In this equation, $*g \circ f$ represents the composition of functions $*f$ and 
 1797,Characteristics of Chemical Reaction,1611,,v,-,MSE217,"1785, 1625, 1632"
 1798,Rates,1726,,o,-,"MSE217, MSE218, MSE244, MSE245, MSE202","1732, 1730, 1731, 1733, 1781"
 1799,Composition,1726,,o,-,"MSE217, MSE218, MSE244, MSE245","1727, 1731, 1728"
-1900,Organic Chemistry,1002,,g,"The chemistry pertaining to the compounds consisting of carbon in combination with other elements (hydrogen, oxygen, nitrogen, sulphur, phosphorus, etc.).",MSE245,
+1900,Organic Chemistry: MSE245,1002,,g,"The chemistry pertaining to the compounds consisting of carbon in combination with other elements (hydrogen, oxygen, nitrogen, sulphur, phosphorus, etc.).",MSE245,
 1901,Isomers,1900,,g,Compounds which have the same molecular formula. There are two main types of isomers; constitutional isomers and stereoisomers.,"MSE245, MSE217","1913, 1980, 1903, 1906, 1902, 1904, 1905, 1690, 1600, 1979, 1909, 1935, 1979"
 1902,Stereoisomers,1901,,o,"Isomers that have the same molecular formula and the same connectivity of atoms, but differ in the spatial arrangement of the atoms. ","MSE245, MSE217","1913, 1690, 1600"
 1903,Stereocentre,1902,,r,"Often referred to as the chirality centre, it is the presence of a carbon atom that is bonded to four different groups. ","MSE245, MSE217","1913, 1690, 1600"

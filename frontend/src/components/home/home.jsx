@@ -145,28 +145,12 @@ export default class Home extends React.Component {
     this.fetchByID(uniqueID);
     this.setState({hidden: key})
     this.setState({currentSelected: uniqueID})
+    //this.fetchNodeByID(uniqueID)
     this.fetchLineage(uniqueID)
     setTimeout(function(){ restartAnimation(); }, 1000);  // 2 second delay
     setTimeout(this.setBack, 1000);
   }
 
-  // function will get run after the render method
-  // requests the backend to provide a tree in the intended data structure using the uniqueID given
-  // the state data is updated with the new tree
-  // this is called on the handle double click method
-  fetchByID(id) { 
-    const url = "http://localhost:3500/tree/";
-    fetch(url.concat(id))
-        .then((res) => {
-            if (res.status !== 200) {
-                throw Error(res.status);
-            } 
-            return res.json();
-        })
-        .then((res) => {
-            this.setState({data: res});  // this triggers the rerender to happen 
-        })
-  }
 
   // this function gets called on a single click of a tree node
   // it takes in the uniqueID of the selected node as well as the key (integer number that represents its nodeID)
@@ -195,7 +179,7 @@ export default class Home extends React.Component {
     }
   }
 
-
+  // FETCHES THE DESCRIPTION DATA
   // This function will get run after the render method.
   // requests the backend to provide the description for the uniqueID given in the form of an object;
   // the object includes the (1) definition string, (2) related courses, (2) related concepts. 
@@ -217,6 +201,27 @@ export default class Home extends React.Component {
         })
   }
 
+  // FETCHES THE TREE DATA
+  // function will get run after the render method
+  // requests the backend to provide a tree in the intended data structure using the uniqueID given
+  // the state data is updated with the new tree
+  // this is called on the handle double click method
+  fetchByID(id) { 
+    const url = "http://localhost:3500/tree/";
+    fetch(url.concat(id))
+        .then((res) => {
+            if (res.status !== 200) {
+                throw Error(res.status);
+            } 
+            return res.json();
+        })
+        .then((res) => {
+            this.setState({data: res});  // this triggers the rerender to happen 
+        })
+  }
+
+  // FETCHES THE LINEAGE DATA
+  // sets the state to the lineage
   fetchLineage(id) {
     const url = "http://localhost:3500/grandparent/";
     console.log("the uniqueID Passvdded in", id);
@@ -257,13 +262,12 @@ export default class Home extends React.Component {
                 <div className="side-holder">
                   <div className="head-legend"> Legend </div>
                     <div className="legend-holder">
-                      <div className="legend top" style={{backgroundColor: "#f79d65"}}>type of</div>
+                      <div className="legend top" style={{backgroundColor: "#f79d65"}}>subset</div>
                       <div className="legend" style={{backgroundColor: "#c77dff"}}>characterize</div>
                       <div className="legend" style={{backgroundColor: "#99d98c"}}>subtopic</div>
                       <div className="legend" style={{backgroundColor: "#ff7096"}}>derive</div>
                       <div className="legend" style={{backgroundColor: "#00bbf9"}}>theorem</div>
-                      <div className="legend" style={{backgroundColor: "#ef233c"}}>part of</div> 
-                      <div className="legend" style={{backgroundColor: "#ef234c"}}>is</div>                     
+                      <div className="legend" style={{backgroundColor: "#ef233c"}}>parthood</div>                   
                     </div>
                 </div>  
                 <div className="side-holder">

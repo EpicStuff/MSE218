@@ -162,10 +162,10 @@ export default class Courses extends React.Component {
                     <div className="content-right">
                         <div className='intro'>
                             <h1>Course Overlap</h1>
-                            <p>See a list of MSE courses. Select as many course codes, and see the overlap in content between them.</p>
+                            <p>Select one or more course codes on the left sidebar, and click <i>generate intersection</i> to show the overlap in content between selected items. Click concepts to open them in the tree. </p>
                         </div>
                         
-                        <button className="select-button" onClick={() => {this.con()}}>Select</button>
+                        <button className="select-button" onClick={() => {this.con()}}>Generate Intersection</button>
                         <div className='holder-for-concepts'>
                         <Overlap conceptArray={this.state.concepts}/>
                         </div>

@@ -10,6 +10,7 @@ const Concepts = require('../model/Concept'); // Concepts is the collection
 const dropDatabase = async () => { 
   try {
     Concepts.collection.drop();
+    console.log('database dropped successfully')
     //return await Concepts.deleteMany({});   
   } catch(err) {
     console.log(err.message);

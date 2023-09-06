@@ -75,6 +75,13 @@ export default class SearchResultDescription extends React.Component {
         return (
             <div>
               <div className="grey-box">
+              {this.createTitle(description, "Open in Tree:")}
+              <SearchResultDescriptionConceptBox
+                  uniqueID={uniqueID} 
+                  content={name}
+                  course={this.findCourseByID(uniqueID)} />
+            </div>
+              <div className="grey-box">
                 {this.createTitle(description, "Definition:")}
                 <DefinitionBox title={"Definition"} content={description} laTex={laTex} />
               </div>
@@ -86,13 +93,6 @@ export default class SearchResultDescription extends React.Component {
               <div className="grey-box">
                   {this.createTitle(courses, "Related Courses:")}
                   {this.createCourses(courses)}
-              </div>
-              <div className="grey-box">
-                {this.createTitle(description, "Open in Tree:")}
-                <SearchResultDescriptionConceptBox
-                    uniqueID={uniqueID} 
-                    content={name}
-                    course={this.findCourseByID(uniqueID)} />
               </div>
             </div>
         );

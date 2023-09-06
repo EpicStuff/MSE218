@@ -33,7 +33,7 @@ export default class Ontology extends React.Component {
                     <div className='vertical-bar'>
                         <div className="labels"> 
                             <p onClick = {() => {this.scrollFunction1('subset')}}><span style={{color: "#f79d65"}}>Subset</span></p>
-                            <p onClick = {() => {this.scrollFunction1('constitution')}}><span style={{color: "#ef233c"}}>Constitution</span></p>
+                            <p onClick = {() => {this.scrollFunction1('constitution')}}><span style={{color: "#ef233c"}}>Parthood</span></p>
                             <p onClick = {() => {this.scrollFunction1('subtopic')}}><span style={{color: "#99d98c"}}>Subtopic</span></p>
                             <p onClick = {() => {this.scrollFunction1('characterize')}}><span style={{color: "#c77dff"}}>Characterize</span></p>
                             <p onClick = {() => {this.scrollFunction1('theorem')}}><span style={{color: "#00bbf9"}}>Theorem</span></p>
@@ -52,11 +52,11 @@ export default class Ontology extends React.Component {
                     <div className='relation-description-holder'>
                         <div className='content-side'>  
                             <div className='relation-section' id='subset'>
-                                <h1 style={{color: "#f79d65"}}>Subset (type of)</h1>
+                                <h1 style={{color: "#f79d65"}}>Subset</h1>
                                 <p>subset(X, Y) := Y is a subset of X</p>
                                 <ul>
                                     <li>Y is a type of X</li>
-                                    <li>X is a label that describes Y</li>
+                                    <li>X is an explicit description of Y</li>
                                 </ul>
                                 <p>By modelling conceptual ideas into sets, concepts can be hierarchically organized by sets. 
                                 To illustrate, consider the concept of functions in mathematics. Instead of defining functions as 
@@ -69,7 +69,8 @@ export default class Ontology extends React.Component {
                                     <li>The set of all graphing techniques</li>
                                     <li>The set of all phase diagrams</li>
                                 </ul>
-                                <p>Some concepts by nature are sets, or more precisely, a label which holds elements such as:</p>
+                                <p>Some concepts by nature are sets, or more precisely, an explicit description of a set through
+                                enumeration. Some examples are: </p>
                                 <ul>
                                     <li>The Laws of Thermodynamics</li>
                                     <li>Crystal Families</li>
@@ -81,7 +82,7 @@ export default class Ontology extends React.Component {
                                 
                             </div>
                             <div className='relation-section' id='constitution'>
-                                <h1 style={{color: "#ef233c"}}>Constitution (part of)</h1>
+                                <h1 style={{color: "#ef233c"}}>Parthood</h1>
                                 <p>constitution(X, Y) := X constitutes of Y</p>
                                 <ul>
                                     <li>Y is made of X</li>

@@ -84,9 +84,6 @@ export default class Description extends React.Component {
         const courses = this.props.nodeInfo.courses;
         const related = this.props.nodeInfo.related;
         const laTex = this.props.nodeInfo.LaTeX;
-        const x = `k_{n+1} = n^2 + k_n^2 - k_{n-1}`
-        const y = `adding in a &#120591;`
-        const z = 'hey testing this $_t_2$ and another one $_x_2$ etc. Adding a longer one in $_k_{n+1} = n^2 + k_n^2 - k_{n-1}$'
        
     
         return (
