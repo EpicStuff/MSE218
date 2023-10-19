@@ -234,12 +234,13 @@ const mainFunction = async (csv_file_name) => {
     
     // process the data
     let data = await csvReading(csv_file_name);
-
+   
     // create a dictionary: keys = uniqueIDs : values = names
     // create a list of all the parents (used to determine if the node is a list)
     let result = await create_id_name_dict(data);
     let id_name_dict = result[0]
     let list_of_parents = result[1]
+    
 
     // loop through data, produce the cleaned results
     // cleaned_data is a list of dictionaries, each containing node data for a node
@@ -247,9 +248,11 @@ const mainFunction = async (csv_file_name) => {
     let results = await loop_through_data(data, id_name_dict, list_of_parents);
     let cleaned_data = results[0]; 
     let ids = results[1];
+    console.log(results)
 
     // if there was an error in the data, it will return -1 
     if (cleaned_data == -1) {
+
         console.log('Some data was not correctly inputted. Program stopped.')
     } else {
         // check if the parent is in the database, if not, that means there is a node 

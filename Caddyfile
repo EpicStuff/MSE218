@@ -1,0 +1,13 @@
+mseke.com {
+    encode gzip
+
+    route /frontend/* {
+        uri strip_prefix /frontend
+        reverse_proxy http://localhost:80
+    }
+
+    route /backend/* {
+        uri strip_prefix /backend
+        reverse_proxy http://localhost:3500
+    }
+}

@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon server",
-    "start": "node server"
+    "start": "node server",
+    "stop": "kill --signal SIGINT server"
   },
   "author": "",
   "license": "ISC",
