@@ -6,7 +6,6 @@
 2. run `sudo apt install npm`
 3. run `git clone https://github.com/EpicStuff/MSE218.git`
 4. run `cd MSE218`
-5. run `chmod +x setup.sh`
-6. run `chmod +x run.sh`
-7. run `./setup.sh`
-8. run `./run.sh`
+5. run `chmod +x setup.sh run.sh`
+6. run `./setup.sh`
+7. run `./run.sh`
