@@ -13,3 +13,5 @@
 5. `chmod +x setup.sh run.sh`
 6. `./setup.sh`
 7. `./run.sh`
+
+- Once you have run everything once successfully, you only need to run `./run.sh` to restart the server
