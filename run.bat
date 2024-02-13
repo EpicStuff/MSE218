@@ -1,5 +1,5 @@
 cd backend
-start "" "npm run start"
+start cmd /k npm run start
 cd ..
 cd frontend
-start "" "npm run start"
+start cmd /k npm run start
